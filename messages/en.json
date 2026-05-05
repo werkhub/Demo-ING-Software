@@ -1,0 +1,1244 @@
+{
+  "common": {
+    "actions": {
+      "save": "Save",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "delete": "Delete",
+      "add": "Add",
+      "create": "Create",
+      "new": "New",
+      "back": "Back",
+      "confirm": "Confirm",
+      "ok": "OK",
+      "search": "Search",
+      "filter": "Filter",
+      "reset": "Reset",
+      "send": "Send",
+      "open": "Open",
+      "close": "Close",
+      "upload": "Upload",
+      "download": "Download",
+      "more": "More",
+      "loading": "Loading …",
+      "saving": "Saving …",
+      "view": "View",
+      "details": "Details"
+    },
+    "fields": {
+      "title": "Title",
+      "name": "Name",
+      "description": "Description",
+      "notes": "Notes",
+      "comment": "Comment",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "date": "Date",
+      "deadline": "Deadline",
+      "category": "Category",
+      "status": "Status",
+      "type": "Type",
+      "project": "Project",
+      "responsible": "Assignee",
+      "action": "Action",
+      "actions": "Actions",
+      "message": "Message",
+      "amount": "Amount",
+      "createdAt": "Created",
+      "updatedAt": "Updated"
+    },
+    "status": {
+      "open": "Open",
+      "inProgress": "In progress",
+      "completed": "Completed",
+      "draft": "Draft",
+      "pending": "Pending",
+      "archived": "Archived",
+      "critical": "Critical",
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "empty": {
+      "noResults": "No results",
+      "noEntries": "No entries",
+      "noProjects": "No projects"
+    },
+    "confirm": {
+      "delete": "Really delete?",
+      "discard": "Discard changes?"
+    },
+    "urgency": {
+      "overdue": "{days} DAYS OVERDUE",
+      "today": "TODAY",
+      "tomorrow": "TOMORROW",
+      "inDays": "in {days} days"
+    }
+  },
+  "nav": {
+    "sections": {
+      "uebersicht": "Overview",
+      "tagesgeschaeft": "Daily Work",
+      "projekte": "Projects",
+      "finanzen": "Finance",
+      "personal": "Personnel",
+      "dokumentation": "Documentation",
+      "werkzeuge": "Tools",
+      "wissen": "Knowledge",
+      "verwaltung": "Administration"
+    },
+    "items": {
+      "dashboard": "Dashboard",
+      "vorgaenge": "Cases",
+      "projekte": "Projects",
+      "bautagebuch": "Construction Diary",
+      "fristen": "Deadlines",
+      "anzeigen": "Notices",
+      "rechnungen": "Incoming Invoices",
+      "ausgangsrechnungen": "Outgoing Invoices",
+      "stunden": "Time Tracking",
+      "datev": "DATEV Export",
+      "liquiditaet": "Cash Flow",
+      "finanzen": "Finance",
+      "erechnung-import": "E-Invoice Import",
+      "personal": "Personnel",
+      "personal-zuordnung": "Project Assignment",
+      "hoai-rechner": "HOAI Calculator",
+      "vertrag": "Contract Scan",
+      "ruege-analyse": "Defect Notice Analysis",
+      "anordnung": "Instruction Check",
+      "analysen": "Analyses",
+      "recht-assistent": "Legal Assistant",
+      "gesetze": "Laws",
+      "urteile": "Court Rulings",
+      "vorlagen": "Templates",
+      "beweis": "Evidence",
+      "workspace": "Workspace",
+      "hinschg": "Whistleblower",
+      "nu": "Subcontractor Pass-through",
+      "lizenz": "License Center"
+    }
+  },
+  "sidebar": {
+    "ariaLabel": "Main navigation",
+    "closeAria": "Close navigation",
+    "tagline": "Risk OS for construction projects",
+    "rdgHint": {
+      "label": "RDG notice:",
+      "text": "Information, not legal advice."
+    }
+  },
+  "localeSwitcher": {
+    "label": "Switch language",
+    "options": {
+      "de": "Deutsch",
+      "en": "English"
+    }
+  },
+  "modules": {
+    "dashboard": {
+      "title": "Dashboard",
+      "greeting": {
+        "night": "Good night",
+        "morning": "Good morning",
+        "day": "Hello",
+        "evening": "Good evening"
+      },
+      "summary": {
+        "allClear": "No critical deadlines or open cases right now.",
+        "prefix": "You have",
+        "middleAnd": "in the next 14 days and",
+        "criticalDeadlines": "{count, plural, one {# critical deadline} other {# critical deadlines}}",
+        "openCases": "{count, plural, one {# open case} other {# open cases}}",
+        "highRiskTail": "— of which {n} carry a high risk score"
+      },
+      "cta": {
+        "newCase": "Create new case",
+        "viewCases": "View cases",
+        "viewAll": "View all",
+        "viewProjects": "Project list",
+        "viewDeadlines": "All"
+      },
+      "sections": {
+        "vorgaengeByStatus": "Cases by status",
+        "projektRiskHeatmap": "Project risk heatmap",
+        "upcomingDeadlines": "Upcoming deadlines",
+        "recentActivities": "Recent activity",
+        "recentQueries": "Recent queries",
+        "quickAccess": "Quick access"
+      },
+      "labels": {
+        "workspaceWide": "Workspace-wide",
+        "frequentActions": "Frequent actions",
+        "noQueriesYet": "No queries yet. Ask your first via the Legal Assistant.",
+        "categoryFallback": "Gen."
+      },
+      "kpi": {
+        "activeProjects": {
+          "label": "Active projects",
+          "caption": "Workspace total"
+        },
+        "openCases": {
+          "label": "Open cases",
+          "caption": "End-to-end workflows"
+        },
+        "deadlines14": {
+          "label": "Deadlines ≤ 14 days",
+          "captionCritical": "critical",
+          "captionCalm": "all clear"
+        },
+        "highRisk": {
+          "label": "High risk score",
+          "captionPresent": "cases ≥ 60",
+          "captionAbsent": "none critical"
+        }
+      },
+      "fristen": {
+        "emptyWindow": "No deadlines in the next {days} days.",
+        "viewLink": "view"
+      },
+      "activities": {
+        "empty": "No activity in this workspace yet.",
+        "kindLabels": {
+          "bautagebuch": "DIA",
+          "anfrage": "QRY",
+          "vorgang": "CSE",
+          "rechnung": "INV",
+          "audit": "AUD"
+        }
+      },
+      "vorgaengeBoard": {
+        "columns": {
+          "offen": "Open",
+          "in_bearbeitung": "In progress",
+          "wartet_auf_anwalt": "Awaiting counsel",
+          "abgeschlossen": "Completed"
+        },
+        "moreCount": "+{count} more",
+        "dueLabel": "due {date}",
+        "categoryLabels": {
+          "maengelruege": "Defect notice",
+          "anlieferung": "Delivery",
+          "vertragspflicht": "Contract obligation",
+          "sonstiges": "Other"
+        }
+      },
+      "riskHeatmap": {
+        "empty": "No projects to score yet.",
+        "columns": {
+          "project": "Project",
+          "frist": "Deadline",
+          "vorgangstau": "Case backlog",
+          "vertragsluecken": "Contract gaps",
+          "maengel": "Defects",
+          "overall": "Overall"
+        }
+      }
+    },
+    "vorgaenge": {
+      "title": "Cases",
+      "subtitle": "Clarification and task management",
+      "kicker": "Cases · {count}",
+      "headline": "Case overview",
+      "summary": "{open} open · {highRisk} with high risk score · end-to-end workflow from intake to dispatch.",
+      "newCase": "New case",
+      "newCaseCta": "Create new case",
+      "filter": {
+        "all": "All",
+        "byProject": "By project",
+        "byCategory": "By category",
+        "byStatus": "By status",
+        "byRisk": "By risk",
+        "search": "Search …"
+      },
+      "table": {
+        "title": "Title",
+        "project": "Project",
+        "status": "Status",
+        "category": "Category",
+        "risk": "Risk",
+        "assignee": "Assignee",
+        "updated": "Updated"
+      },
+      "categories": {
+        "ruege": "Defect notice",
+        "anordnung": "Instruction",
+        "behinderung": "Impediment",
+        "bedenken": "Concern",
+        "klaerung": "Clarification",
+        "sonstiges": "Other"
+      },
+      "empty": "No cases found.",
+      "create": {
+        "title": "Create case",
+        "save": "Create",
+        "fromUpload": "Create from file",
+        "backLink": "← All cases",
+        "headline": "Create new case",
+        "intro": "Upload an incoming document (defect notice, delivery slip, instruction, contract duty). LexBau classifies it via rules; you can adjust category and status at any time after creation."
+      }
+    },
+    "projekte": {
+      "title": "Projects",
+      "subtitle": "Manage construction projects",
+      "newProject": "New project",
+      "view": {
+        "cards": "Cards",
+        "table": "Table"
+      },
+      "filter": {
+        "search": "Search project …",
+        "status": "Status",
+        "withRisks": "With risks",
+        "withChanges": "With change orders"
+      },
+      "table": {
+        "identifier": "ID",
+        "name": "Name",
+        "client": "Client",
+        "value": "Contract value",
+        "phase": "Phase",
+        "status": "Status",
+        "risks": "Risks",
+        "changes": "Change orders"
+      },
+      "phases": {
+        "lp1": "LP 1 — Basic evaluation",
+        "lp2": "LP 2 — Preliminary planning",
+        "lp3": "LP 3 — Design planning",
+        "lp4": "LP 4 — Permit planning",
+        "lp5": "LP 5 — Detailed planning",
+        "lp6": "LP 6 — Tender preparation",
+        "lp7": "LP 7 — Tender support",
+        "lp8": "LP 8 — Site supervision",
+        "lp9": "LP 9 — Project closeout"
+      },
+      "create": {
+        "title": "Create new project",
+        "fields": {
+          "identifier": "Project ID",
+          "name": "Name",
+          "client": "Client",
+          "address": "Site address",
+          "contractDate": "Contract date",
+          "value": "Contract value (net)"
+        },
+        "submit": "Create project"
+      },
+      "empty": "No projects yet."
+    },
+    "fristen": {
+      "title": "Deadlines",
+      "subtitle": "Central deadline overview",
+      "kicker": "Active deadlines",
+      "intro": "Sorted by urgency · live from the database",
+      "icalTitle": "Deadlines + appointments as an iCal file for Outlook/Apple/Google Calendar",
+      "newDeadline": "New deadline",
+      "newSection": "Create a new deadline",
+      "groups": {
+        "critical": "Critical (≤ 1 day)",
+        "thisWeek": "This week",
+        "open": "Open",
+        "completed": "Completed",
+        "todayTomorrow": "Today / Tomorrow",
+        "totalOpen": "Open total",
+        "doneCount": "Completed · {count}"
+      },
+      "table": {
+        "task": "Task",
+        "deadline": "Deadline",
+        "project": "Project",
+        "legalBasis": "Legal basis",
+        "daysLeft": "Days left"
+      },
+      "actions": {
+        "complete": "Complete",
+        "reopen": "Reopen",
+        "exportIcal": "iCal export",
+        "deleteAria": "Delete deadline",
+        "doneShort": "✓ done"
+      },
+      "form": {
+        "templatesLabel": "Quick templates (deadline + basis filled in)",
+        "taskLabel": "Task / deadline description",
+        "taskPlaceholder": "e.g. Reply to defect notice — BV-2026-001",
+        "deadlineLabel": "Due date",
+        "projectLabel": "Project",
+        "noProject": "— No project —",
+        "legalBasisLabel": "Legal basis (optional)",
+        "legalBasisPlaceholder": "e.g. \"§ 13 (5) VOB/B\"",
+        "hint": "Category + urgency are derived from the date",
+        "submit": "Create deadline",
+        "submitting": "Saving …",
+        "createdToast": "Deadline created"
+      },
+      "projectFallback": {
+        "none": "No project",
+        "unknown": "Unknown project"
+      },
+      "empty": "No open deadlines."
+    },
+    "bautagebuch": {
+      "title": "Construction Diary",
+      "subtitle": "Daily site log",
+      "kicker": "Co-pilot · live from DB",
+      "intro": "Every entry is classified automatically and flags legally relevant triggers — instructions, impediments, concerns, defect notices, payment delays.",
+      "stats": {
+        "total": "Entries total",
+        "withTrigger": "With trigger",
+        "critical": "Critical"
+      },
+      "newEntrySection": "New entry",
+      "newEntry": "New entry",
+      "form": {
+        "project": "Project",
+        "date": "Date",
+        "weather": "Weather",
+        "temperature": "Temperature",
+        "hoursOwn": "Own hours",
+        "hoursSubcontractor": "Subcontractor hours",
+        "equipment": "Equipment used",
+        "text": "Day report",
+        "submit": "Save entry"
+      },
+      "weather": {
+        "sunny": "Sunny",
+        "cloudy": "Cloudy",
+        "rain": "Rain",
+        "snow": "Snow",
+        "frost": "Frost",
+        "storm": "Storm"
+      },
+      "trigger": {
+        "anordnung": "Instruction detected",
+        "behinderung": "Impediment detected",
+        "bedenken": "Concern detected",
+        "ruege": "Defect notice detected",
+        "zahlungsverzug": "Payment delay detected"
+      },
+      "empty": "No diary entries yet."
+    },
+    "anzeigen": {
+      "title": "Notices",
+      "subtitle": "Impediment and concern notices under VOB/B",
+      "kicker": "Compliance duties · § 6 / § 4 VOB/B",
+      "intro": "Notices of impediment (§ 6 (1) VOB/B) and notices of concern (§ 4 (3) VOB/B) — formally demonstrable, with sending workflow, receipt tracking and escalation when acknowledgement is missing.",
+      "newNotice": "New notice",
+      "kind": {
+        "behinderung": "Notice of impediment (§ 6 VOB/B)",
+        "bedenken": "Notice of concern (§ 4 (3) VOB/B)"
+      },
+      "status": {
+        "draft": "Draft",
+        "sent": "Sent",
+        "acknowledged": "Receipt confirmed",
+        "overdue": "Overdue"
+      },
+      "stats": {
+        "total": "Notices total",
+        "drafts": "Drafts",
+        "sentWaiting": "Sent · awaiting",
+        "ackOverdue": "Receipt overdue"
+      },
+      "emptyNoProjects": "Create a project first — notices are recorded per project.",
+      "emptyHint": "Tip: a diary entry categorised as \"impediment\" or \"concern\" can be promoted directly to a notice.",
+      "sentOn": "sent {date}",
+      "acknowledgedOn": "acknowledged {date}",
+      "legalNoticesHeading": "Legal notes",
+      "form": {
+        "project": "Project",
+        "subject": "Subject",
+        "matter": "Matter",
+        "submit": "Save notice"
+      },
+      "empty": "No notices yet."
+    },
+    "stunden": {
+      "title": "Time Tracking",
+      "subtitle": "Weekly staff hours",
+      "kicker": "Work · staff hours",
+      "weekTitle": "Hours — week {kw} / {jahr}",
+      "intro": "Daily capture of staff hours. The weekly lock freezes edits after payroll. Plausibility check > 12h/day creates an automatic case.",
+      "weekLockedToast": "Week {kw}/{jahr} has been locked.",
+      "navTodayWeek": "Today (week {kw}/{jahr})",
+      "captureBtn": "+ Capture hours",
+      "employeesBtn": "Employees",
+      "stats": {
+        "activeEmployees": "Active staff",
+        "bookings": "Bookings",
+        "hoursTotal": "Total hours",
+        "wageTotal": "Wage total"
+      },
+      "lockState": {
+        "lockedTitle": "Week locked",
+        "lockedDetails": "on {date} by {by}.",
+        "lockedNote": "Note: {note}",
+        "openLabel": "Week open — edits allowed. Lock after payroll."
+      },
+      "noEmployees": "No active employees.",
+      "createFirstEmployee": "+ Add your first employee",
+      "tableHeaders": {
+        "employee": "Employee",
+        "hoursTotal": "Σ hrs"
+      },
+      "weekNav": {
+        "previous": "Previous week",
+        "next": "Next week",
+        "current": "Current week"
+      },
+      "lock": {
+        "locked": "Locked",
+        "lockButton": "Lock week",
+        "unlockButton": "Unlock",
+        "lockedBy": "Locked by",
+        "lockedAt": "Locked on"
+      },
+      "table": {
+        "employee": "Employee",
+        "trade": "Trade",
+        "monday": "Mon",
+        "tuesday": "Tue",
+        "wednesday": "Wed",
+        "thursday": "Thu",
+        "friday": "Fri",
+        "saturday": "Sat",
+        "sunday": "Sun",
+        "total": "Total"
+      },
+      "warning": {
+        "over12h": "More than 12 hours on a single day — case created automatically."
+      },
+      "empty": "No hours recorded for this week."
+    },
+    "personal": {
+      "title": "Personnel",
+      "kicker": "Employees · tools · assignments",
+      "intro": "Hub for all employee-related tools: time tracking, master data, project assignment. More modules (vacation, training, payroll) to follow.",
+      "badge": {
+        "demo": "Demo"
+      },
+      "hub": {
+        "stunden": {
+          "title": "Time tracking",
+          "desc": "Daily personnel hours per employee × project. Week lock after payroll, plausibility check >12 h/day.",
+          "primaryLabel": "Active employees",
+          "secondary": "Weekly capture with lock"
+        },
+        "mitarbeiter": {
+          "title": "Employees",
+          "desc": "Master data: name, personnel number, wage type, hourly rate, cost centre, trade.",
+          "primaryLabel": "Records",
+          "secondary": "{aktiv} active · {inaktiv} inactive"
+        },
+        "zuordnung": {
+          "title": "Project assignment",
+          "desc": "Plan-level mapping employee → project with role, period and allocation share. Complements daily hours bookings.",
+          "primaryLabel": "Assignments",
+          "secondary": "Master/plan data"
+        },
+        "urlaub": {
+          "title": "Vacation & absence",
+          "desc": "Vacation requests, sick notes, leave — balance per employee, approval workflow.",
+          "primaryLabel": "Days open",
+          "secondary": "Demo mask · no data yet"
+        },
+        "schulung": {
+          "title": "Training & qualifications",
+          "desc": "Safety briefings, expert qualifications, certificates with expiry date and reminders.",
+          "primaryLabel": "Records",
+          "secondary": "Demo mask · no data yet"
+        },
+        "lohn": {
+          "title": "Payroll preparation",
+          "desc": "Prepare weekly hours for payroll/DATEV-Lohn. Per employee × wage type × week.",
+          "primaryLabel": "Ready",
+          "secondary": "Demo mask · coming"
+        }
+      },
+      "zuordnung": {
+        "title": "Project assignment",
+        "kicker": "Personnel · Employee ↔ Project",
+        "intro": "Master/plan basis: which employee works on which project, in what role, with what allocation. Complements the daily hours booking.",
+        "backToHub": "Back to Personnel",
+        "manageEmployees": "Manage employees",
+        "manageProjects": "Manage projects",
+        "toastCreated": "Assignment created.",
+        "toastDeleted": "Assignment deleted.",
+        "form": {
+          "title": "New assignment",
+          "requirementsHint": "At least one active employee and one project must exist before an assignment can be created.",
+          "fields": {
+            "mitarbeiter": "Employee",
+            "projekt": "Project",
+            "rolle": "Role",
+            "allokation": "Allocation (0–1)",
+            "startDatum": "Start",
+            "endDatum": "End",
+            "notes": "Note"
+          },
+          "placeholders": {
+            "rolle": "e.g. foreman, site manager, structural engineer",
+            "notes": "optional"
+          },
+          "submit": "Create assignment"
+        },
+        "list": {
+          "title": "Assignments ({n})",
+          "empty": "No assignments created yet.",
+          "delete": "Delete",
+          "headers": {
+            "mitarbeiter": "Employee",
+            "projekt": "Project",
+            "rolle": "Role",
+            "allokation": "Alloc.",
+            "zeitraum": "Period"
+          }
+        }
+      }
+    },
+    "finanzen": {
+      "title": "Finance",
+      "subtitle": "Invoices, accounting, cash flow",
+      "kicker": "Accounting · cash flow · interfaces",
+      "intro": "Incoming and outgoing invoices, e-invoice import, DATEV export and cash-flow planning — every finance workflow in one place.",
+      "hub": {
+        "incoming": {
+          "title": "Incoming invoices",
+          "desc": "Invoice-anomaly check: plausibility, price jumps, duplicates, contract matching.",
+          "primaryLabel": "Invoices",
+          "secondary": "{anomalies} anomaly findings · {xml} e-invoices",
+          "badgeRisk": "{n} risk"
+        },
+        "import": {
+          "title": "E-invoice import",
+          "desc": "Import XRechnung, ZUGFeRD, Factur-X. Upload a PDF or XML file — validation runs automatically.",
+          "primary": "XML / PDF",
+          "primaryLabel": "Upload formats",
+          "secondary": "{n} imported so far"
+        },
+        "outgoing": {
+          "title": "Outgoing invoices",
+          "desc": "Progress and final invoices with reminder tracking. § 13b reverse charge detected automatically.",
+          "primaryLabel": "Open gross",
+          "secondary": "{open} open · {paid} paid · {drafts} drafts",
+          "badgeReminder": "{n} reminder"
+        },
+        "datev": {
+          "title": "DATEV export",
+          "desc": "Booking-batch CSV per DATEV-EXTF spec. Sales, subcontractor incoming, payroll — exportable separately.",
+          "primaryLabelLast": "Last export",
+          "primaryLabelNone": "No export yet",
+          "secondary": "{n} exports (last 5)"
+        },
+        "liquidity": {
+          "title": "Cash-flow planning",
+          "desc": "Cash-flow forecast from open A/R, subcontractor invoices, payroll. Early warning when balance ≤ 0 within 14 days.",
+          "primaryLabel": "Scenarios",
+          "lastUpdate": "Last: {date}"
+        },
+        "bauabzug": {
+          "title": "Construction tax · § 48a EStG",
+          "desc": "Quarterly report of the 15% construction-tax retention to the tax office. Aggregated per quarter + CSV template for Mein-ELSTER.",
+          "primaryLabel": "open to declare",
+          "openCount": "{n} invoices not yet declared",
+          "allPaid": "all paid",
+          "badgeOpen": "{n} open"
+        }
+      },
+      "cards": {
+        "incoming": {
+          "title": "Incoming invoices",
+          "openCount": "{count} open",
+          "anomalies": "{count} anomalies"
+        },
+        "erechnungImport": {
+          "title": "E-Invoice Import",
+          "description": "XRechnung / ZUGFeRD"
+        },
+        "outgoing": {
+          "title": "Outgoing invoices",
+          "openClaims": "{count} open claims",
+          "dueReminders": "{count} due reminders"
+        },
+        "datev": {
+          "title": "DATEV Export",
+          "lastExport": "Last export: {date}",
+          "neverExported": "Never exported"
+        },
+        "liquidity": {
+          "title": "Cash flow planning",
+          "scenarios": "{count} scenarios",
+          "lastUpdate": "Updated: {date}"
+        }
+      }
+    },
+    "rechnungen": {
+      "title": "Incoming Invoices",
+      "subtitle": "Invoice anomalies and contract matching",
+      "kicker": "Incoming invoices · {count}",
+      "headline": "Invoice anomaly POC",
+      "summary": "{anomalies} anomaly findings · {highRisk} with score ≥ 60 · {xml} e-invoices",
+      "summaryInvalid": ", {n} invalid",
+      "summaryWarnings": ", {n} with warnings",
+      "uploadXml": "+ E-invoice (XML)",
+      "addPdf": "+ PDF / anomaly check",
+      "upload": "Upload e-invoice",
+      "table": {
+        "vendor": "Vendor",
+        "invoiceNumber": "Invoice no.",
+        "amount": "Amount",
+        "invoiceDate": "Invoice date",
+        "anomalies": "Anomalies",
+        "format": "Format",
+        "status": "Status"
+      },
+      "anomalyType": {
+        "duplicate": "Duplicate",
+        "priceJump": "Price jump",
+        "noContract": "No contract",
+        "implausible": "Implausible"
+      },
+      "empty": "No incoming invoices."
+    },
+    "ausgangsrechnungen": {
+      "title": "Outgoing Invoices",
+      "subtitle": "Progress and final invoices",
+      "kicker": "Receivables · § 16 VOB/B · § 14 UStG",
+      "intro": "Progress and final invoices across all projects. Invoice numbers are sequential workspace-wide and immutable (tax law). Creation happens within the respective project.",
+      "statsTotal": "Total",
+      "statsDrafts": "Drafts",
+      "statsOpen": "Open receivables",
+      "statsOpenCaption": "{n} invoices open",
+      "statsReminders": "Reminders / litigation",
+      "emptyTitle": "No outgoing invoices yet.",
+      "emptyHint": "Invoices are created within projects. Pick a project and use \"→ Outgoing invoices\" there.",
+      "createFirst": "+ First invoice in project {identifier}",
+      "noSubject": "(no subject)",
+      "projectRemoved": "Project removed",
+      "due": "due {date}",
+      "sentAgo": "sent {ago}",
+      "openLabel": "open {amount}",
+      "overdueDays": "{days} d overdue",
+      "paidLabel": "paid",
+      "newInvoice": "New invoice",
+      "kind": {
+        "abschlag": "Progress",
+        "schluss": "Final"
+      },
+      "stats": {
+        "drafts": "Drafts",
+        "openClaims": "Open claims",
+        "dueReminders": "Due reminders",
+        "overdueDays": "Days overdue"
+      },
+      "table": {
+        "number": "No.",
+        "invoiceDate": "Date",
+        "dueDate": "Due",
+        "kind": "Type",
+        "amount": "Amount",
+        "paid": "Paid",
+        "status": "Status"
+      },
+      "badges": {
+        "xrechnung": "XRechnung",
+        "zugferd": "ZUGFeRD",
+        "reverseCharge": "§ 13b RC"
+      },
+      "empty": "No outgoing invoices yet."
+    },
+    "eingangsrechnungenUpload": {
+      "title": "E-Invoice Import",
+      "subtitle": "XRechnung (UBL/CII) or ZUGFeRD",
+      "dropzone": {
+        "label": "Drag file here or click to upload",
+        "hint": "Max 5 MB · XML"
+      },
+      "submit": "Import",
+      "errors": {
+        "tooLarge": "File too large (max 5 MB).",
+        "wrongFormat": "Only XML files allowed.",
+        "invalid": "Could not parse XML."
+      },
+      "success": "Invoice imported."
+    },
+    "datev": {
+      "title": "DATEV Export",
+      "subtitle": "Booking batch in EXTF format",
+      "form": {
+        "from": "From",
+        "to": "To",
+        "submit": "Generate export"
+      },
+      "history": "Recent exports"
+    },
+    "liquiditaet": {
+      "title": "Cash flow planning",
+      "subtitle": "Cash flow forecast with early warning",
+      "warning": "Early warning: balance projected to drop below 0 within 14 days.",
+      "scenarios": "Scenarios"
+    },
+    "hoaiRechner": {
+      "title": "HOAI Fee Calculator",
+      "subtitle": "Fee calculation per HOAI 2021",
+      "kicker": "Quick action · HOAI 2021",
+      "intro": "Fee calculation per HOAI 2021 for building design (§ 35), civil engineering structures (§ 47), structural engineering (§ 51) and building services (§ 56). Linear interpolation between the official fee table values — for project costing, not for litigation-grade fee calculation.",
+      "tipBefore": "Tip: if the project already exists in the system, you can store the HOAI values directly on the project (",
+      "tipLink": "Projects",
+      "tipAfter": ") — the fee total then appears automatically in the project list.",
+      "form": {
+        "leistungsbild": "Service profile",
+        "honorarzone": "Fee zone",
+        "anrechenbareCosts": "Eligible costs (net)",
+        "leistungsphasen": "Service phases",
+        "calculate": "Calculate"
+      },
+      "leistungsbilder": {
+        "p35": "§ 35 — Building design",
+        "p47": "§ 47 — Civil engineering structures",
+        "p51": "§ 51 — Structural engineering",
+        "p56": "§ 56 — Building services"
+      },
+      "result": {
+        "honorar": "Fee (net)",
+        "honorarBrutto": "Fee (gross)",
+        "perPhase": "Per service phase"
+      },
+      "hint": "HOAI values can be stored directly on the project."
+    },
+    "rechtAssistent": {
+      "title": "Legal Assistant",
+      "subtitle": "Construction law questions with statutory references",
+      "kicker": "AI tool · mock responses",
+      "demoBadge": "Demo",
+      "intro": "Describe your case in plain language — standard cases return the relevant statute, pros/cons and action steps with source references. Custom queries are stored and categorised in the database.",
+      "perspectiveLabel": "Perspective · {short} · {label}",
+      "switchRoleHintBefore": "Switch role in the ",
+      "switchRoleLink": "workspace settings",
+      "switchRoleHintAfter": ".",
+      "noticeKicker": "Note",
+      "noticeBody": "Standard-case answers are curated. Free-text queries are currently categorised and stored; the Claude API integration with RAG grounding (VOB/BGB/HOAI/case law) follows in Phase 1.",
+      "form": {
+        "question": "Your question",
+        "context": "Project context (optional)",
+        "submit": "Send query"
+      },
+      "response": {
+        "sources": "Sources",
+        "actions": "Recommended actions",
+        "pros": "Pros",
+        "cons": "Cons"
+      },
+      "history": "Recent queries",
+      "empty": "No queries yet.",
+      "demoBanner": "Demo mode: answers from mock scenarios. Live AI follows in Phase 1."
+    },
+    "analysen": {
+      "title": "Analyses",
+      "subtitle": "Contract, defect notice and instruction analysis",
+      "kicker": "AI tools · Pro",
+      "intro": "Document-driven tools: scan contracts, evaluate defect notices, check instructions — all three follow the same pattern (input → analysis → result with statutory reference).",
+      "hub": {
+        "vertrag": {
+          "title": "Contract Scan",
+          "desc": "Pre-signature risk scan: standard-terms clauses, contractual penalties, securities, acceptance rules, unusual quantity clauses.",
+          "primaryLabel": "Contracts on file",
+          "secondary": "{high} high · {medium} medium findings",
+          "noFindings": "No findings yet"
+        },
+        "ruege": {
+          "title": "Defect Notice Analysis",
+          "desc": "Review incoming defect notices: formal validity (specificity, deadline, form), substantive merit, suggested reply.",
+          "primary": "Live",
+          "primaryLabel": "Heuristics active",
+          "secondary": "Full-text analysis with RAG follows in Phase 1"
+        },
+        "anordnung": {
+          "title": "Instruction Check",
+          "desc": "Paste an instruction from WhatsApp/email — classification as § 1 III/IV VOB/B, form check, recommendation for site management.",
+          "primary": "Live",
+          "primaryLabel": "Classification active",
+          "secondary": "Document instructions in a forensically sound way"
+        },
+        "badgeHigh": "{n} high",
+        "badgeMedium": "{n} medium"
+      },
+      "stats": {
+        "contracts": "Contracts on file",
+        "highRisk": "High-risk findings",
+        "mediumRisk": "Medium-risk findings"
+      },
+      "tools": {
+        "vertrag": "Contract Scan",
+        "ruege": "Defect Notice Analysis",
+        "anordnung": "Instruction Check"
+      }
+    },
+    "vertrag": {
+      "title": "Contract Scan",
+      "subtitle": "Detect risky clauses automatically",
+      "kicker": "AI tool · Pro",
+      "intro": "Paste contract text — automatic scan for typical risk clauses: contractual penalty levels, retention, payment deadlines, terms-and-conditions conflicts, missing reservations. Findings are stored per contract with citation and legal basis.",
+      "stats": {
+        "contracts": "Contracts on file",
+        "high": "High-risk findings",
+        "medium": "Medium-risk findings"
+      },
+      "newSection": "Scan a new contract",
+      "noProjects": "Create a project first — contracts are recorded per project.",
+      "listSection": "Contracts on file · {count}",
+      "noContractsYet": "No contracts yet.",
+      "upload": "Upload contract",
+      "rescan": "Rescan",
+      "findings": {
+        "title": "Findings",
+        "risk": "Risk",
+        "clause": "Clause",
+        "basis": "Legal basis",
+        "high": "High",
+        "medium": "Medium",
+        "low": "Low"
+      },
+      "actions": {
+        "createCase": "Create case",
+        "delete": "Delete contract"
+      },
+      "empty": "No contracts yet."
+    },
+    "ruegeAnalyse": {
+      "title": "Defect Notice Analysis",
+      "subtitle": "Review incoming defect notices",
+      "kicker": "AI tool · Pro",
+      "intro": "Paste an incoming defect notice or claim from the client — the tool checks formal validity (specificity of the defect, deadline, written form), evaluates substantive merit and suggests a ready-made reply.",
+      "statusKicker": "Status",
+      "statusBody": "Client-side heuristics analysis (deadline detection, keyword match). Full-text analysis with Claude API + RAG over VOB/BGB/case law follows in Phase 1.",
+      "form": {
+        "text": "Paste defect notice text",
+        "submit": "Analyse"
+      },
+      "result": {
+        "formal": "Formal validity",
+        "material": "Substantive merit",
+        "suggestion": "Suggested response"
+      },
+      "checks": {
+        "specific": "Defect specifically named",
+        "deadline": "Deadline set",
+        "writtenForm": "Written form preserved"
+      }
+    },
+    "anordnung": {
+      "title": "Instruction Check",
+      "subtitle": "Check client communication against VOB/B § 1 (3)/(4)",
+      "kicker": "AI tool · Pro",
+      "intro": "Paste incoming client communication (email, WhatsApp, letter) — the tool checks whether it is a binding instruction within the meaning of § 2 (5) VOB/B and which steps follow. Without an additional-cost notice BEFORE execution, claims are forfeited (BGH VII ZR 201/18).",
+      "inputKicker": "Source text",
+      "inputPlaceholder": "Paste the client's email / message / letter here…",
+      "loadSample": "Load example",
+      "clear": "Clear",
+      "minCharsHint": "Paste at least 20 characters — analysis runs live.",
+      "ratingKicker": "Rating",
+      "scoreLabel": "Score {score}/100",
+      "checksKicker": "Checks",
+      "recommendationsKicker": "Recommended actions ({count})",
+      "risksKicker": "Risks",
+      "deadlineDays": "within {days} {days, plural, one {day} other {days}}",
+      "rdgFooter": "Information, not legal advice within the meaning of the RDG. The analysis relies on keyword heuristics and is no substitute for legal review.",
+      "badgeChanged": "Changed scope",
+      "badgeAdditional": "Additional scope",
+      "level": {
+        "ja": "Yes — instruction identifiable",
+        "wahrscheinlich": "Likely an instruction",
+        "fraglich": "Questionable",
+        "nein": "More of a suggestion, no instruction"
+      },
+      "form": {
+        "text": "Paste email / message / letter",
+        "submit": "Check"
+      },
+      "result": {
+        "score": "Score",
+        "classification": "Classification",
+        "recommendations": "Recommendations",
+        "deadline": "Suggested deadline",
+        "warning": "Risk: hidden instruction without additional-cost reservation."
+      }
+    },
+    "gesetze": {
+      "title": "Laws",
+      "subtitle": "BGB, HOAI 2021, VOB/A/B/C",
+      "kicker": "Reference · legal sources",
+      "intro": "BGB construction-contract law, HOAI 2021 and VOB Parts A/B/C — by paragraph, searchable, with source citations.",
+      "searchLabel": "Search",
+      "searchPlaceholder": "e.g. \"contractual penalty\", \"§ 650b\", \"impediment\" …",
+      "searchSubmit": "Search",
+      "openCard": "Open →",
+      "vobNoticeKicker": "Notice · VOB/A, VOB/B, VOB/C",
+      "vobNoticeBody": "The VOB is a DIN standard series and is copyright-protected (DIN Media). The texts shown here are paraphrased summaries for reference (fair use). Full texts are integrated via the DIN Media licence (Pro tier).",
+      "countParagraphs": "paragraphs",
+      "countAtv": "ATVs / standards",
+      "search": "Search by paragraph or keyword …",
+      "license": {
+        "free": "Free",
+        "licensed": "Licensed"
+      },
+      "vobNotice": "VOB content shown as quotation (§ 51 UrhG); full text via DIN Media licence."
+    },
+    "urteile": {
+      "title": "Case-Law Database",
+      "subtitle": "Federal Court of Justice (BGH) — VII. ZR + V. ZR",
+      "kicker": "Reference · BGH",
+      "intro": "{total} BGH decisions from construction-relevant senates · live-indexed from the ECLI directory of the Federal Ministry of Justice (BMJ).",
+      "lastUpdate": " Last update: ",
+      "stats": {
+        "total": "Decisions total",
+        "viiZr": "VII. Civil Senate",
+        "viiZrCaption": "Work contract · construction contract",
+        "vZr": "V. Civil Senate",
+        "vZrCaption": "Property law · land"
+      },
+      "filterMatches": "{count} matches with current filter",
+      "noMatches": "No matches",
+      "noMatchesAdjust": "Adjust or reset the filter.",
+      "noMatchesFill": "Database is empty. Populate with \"npm run db:fetch-cases\".",
+      "senateDistribution": "Distribution by senate",
+      "sourceKicker": "Source",
+      "sourceBody": "The data is sourced from the official ECLI index of the German Federal Ministry of Justice (rechtsprechung-im-internet.de). Refresh via ",
+      "sourceBody2": ". The full text of a decision opens at the source URL on click.",
+      "rdgFooter": "Information, not legal advice within the meaning of the RDG. The reproduction of leading principles and operative text follows § 5 UrhG (official work).",
+      "search": "Search by case ID, title or keyword …",
+      "filter": {
+        "court": "Court",
+        "year": "Year",
+        "senate": "Senate"
+      },
+      "stats": {
+        "total": "Total",
+        "viiZr": "VII. ZR (work contract)",
+        "vZr": "V. ZR (property law)"
+      },
+      "fulltextHint": "Full text available at the Federal Ministry of Justice (BMJ)."
+    },
+    "vorlagen": {
+      "title": "Templates",
+      "subtitle": "Reusable documents",
+      "empty": "No templates yet."
+    },
+    "beweis": {
+      "title": "Evidence",
+      "subtitle": "Photo/video documentation for critical events",
+      "newEvidence": "New evidence record",
+      "empty": "No evidence records yet."
+    },
+    "workspace": {
+      "title": "Workspace",
+      "subtitle": "Configuration and user management",
+      "tabs": {
+        "general": "General",
+        "users": "Users",
+        "vob": "VOB",
+        "hinschg": "Whistleblower",
+        "business": "Business data"
+      },
+      "general": {
+        "name": "Workspace name",
+        "role": "Role",
+        "roleOptions": {
+          "bauunternehmer": "Construction company",
+          "bauherr": "Owner",
+          "ingenieurbuero": "Engineering office"
+        }
+      },
+      "users": {
+        "invite": "Invite user",
+        "table": {
+          "name": "Name",
+          "email": "Email",
+          "role": "Role",
+          "status": "Status",
+          "lastLogin": "Last login"
+        }
+      },
+      "vob": {
+        "providerLabel": "Preferred external provider",
+        "providers": {
+          "juris": "juris",
+          "din": "DIN Media",
+          "beck": "beck-online",
+          "all": "All"
+        }
+      },
+      "hinschg": {
+        "enabled": "Whistleblower system active",
+        "officeEmail": "Whistleblower office email"
+      },
+      "business": {
+        "iban": "IBAN",
+        "bic": "BIC",
+        "bankName": "Bank",
+        "taxId": "Tax ID",
+        "vatId": "VAT ID",
+        "address": "Address",
+        "email": "Email",
+        "phone": "Phone"
+      }
+    },
+    "hinschg": {
+      "title": "Whistleblower office",
+      "subtitle": "Reports under §§ 12 ff. HinSchG (German Whistleblower Protection Act)",
+      "kicker": "Administration · § 12 ff. HinSchG",
+      "intro": "Internal reporting office under the German Whistleblower Protection Act. Mandatory from 50 employees. Acknowledgement within 7 days, feedback within 3 months (§ 17 HinSchG).",
+      "notEnabled": "The reporting office is not active for this workspace.",
+      "notEnabledHint": "Activate it in the workspace settings — the public reporting URL becomes available afterwards.",
+      "goToSettings": "→ Go to workspace settings",
+      "publicUrlHint": "This URL can be linked publicly or shared by email/notice — no login required.",
+      "openUrl": "Open URL ↗",
+      "anonymousLabel": "anonymous",
+      "submittedAgo": "received {ago}",
+      "responseDeadlineLabel": "Deadline by {date}",
+      "statsLabels": {
+        "total": "Reports total",
+        "newWaiting": "New (awaiting ack)",
+        "inReview": "In review",
+        "deadlineMissed": "Deadline missed"
+      },
+      "emptyReceived": "No reports received yet.",
+      "publicUrl": "Public reporting URL",
+      "stats": {
+        "new": "New",
+        "inReview": "In review",
+        "completed": "Completed",
+        "overdue": "Overdue"
+      },
+      "deadlines": {
+        "ack": "Acknowledgement: 7 days",
+        "feedback": "Feedback: 3 months"
+      },
+      "empty": "No reports."
+    },
+    "lizenz": {
+      "title": "License Center",
+      "subtitle": "Workspace tier, user and platform licences",
+      "kicker": "Workspace · {name}",
+      "intro": "Overview of workspace tier, active platform licences, user licences and compliance status. Platform licences from providers (DIN Media / juris / Beck) are managed here — end-user subscriptions remain external.",
+      "stats": {
+        "activeTier": "Active tier",
+        "usersActive": "Active users",
+        "platformLicenses": "Platform licences"
+      },
+      "sections": {
+        "workspaceTier": "Workspace tier",
+        "platformLicensesCount": "Platform licences ({count})",
+        "external": "External accounts (bring-your-own-subscription)",
+        "users": "Users in this workspace",
+        "compliance": "Compliance"
+      },
+      "facts": {
+        "workspaceId": "Workspace ID",
+        "createdAt": "Created",
+        "usedLicenses": "Licences used",
+        "vobLicense": "VOB licence status",
+        "usedLicensesValue": "{used}/{total} users"
+      },
+      "tierFallback": "Custom tier contract.",
+      "noPlatformLicense": "No platform licence on file yet. The app runs in tier-0 mode (paraphrase + deep links to external providers).",
+      "noPlatformLicenseHint": "Once a contract is in place (e.g. DIN Media VOB full text), add an entry to {code} — the UI then switches to full-text display automatically.",
+      "validFrom": "valid from {date}",
+      "validUntil": " until {date}",
+      "external_": {
+        "vobTitle": "VOB full-text provider",
+        "vobAll": "All providers offered",
+        "vobPreferred": "Preferred: {provider}",
+        "vobAction": "Change in workspace",
+        "anthropicTitle": "Anthropic DPA (Claude API)",
+        "anthropicValue": "Sign the Anthropic data processing agreement before activating AI responses.",
+        "anthropicAction": "View DPA",
+        "hostingTitle": "Hosting · Hetzner Frankfurt",
+        "hostingValue": "GDPR-compliant · DPA already part of Hetzner ToS.",
+        "hostingAction": "Review DPA"
+      },
+      "users_": {
+        "lastLogin": "last {ago}",
+        "withLicense": "Licence",
+        "noLicense": "no licence",
+        "manageLink": "Manage workspace →"
+      },
+      "compliance_": {
+        "auditEntries": "Audit log entries",
+        "auditNote": "Full-text accesses to licensed content are logged for DIN Media audits — once a licence is active."
+      },
+      "tier": {
+        "label": "Workspace tier",
+        "solo": "Solo / Free",
+        "team": "Team",
+        "business": "Business",
+        "enterprise": "Enterprise"
+      },
+      "users": {
+        "label": "User licences",
+        "available": "{n} available",
+        "used": "{n} assigned"
+      },
+      "platform": {
+        "label": "Platform licences",
+        "validUntil": "Valid until",
+        "auditCount": "Audit accesses"
+      },
+      "external": {
+        "label": "External accounts",
+        "vobProvider": "VOB provider",
+        "anthropic": "Anthropic DPA",
+        "hetzner": "Hetzner DPA"
+      }
+    },
+    "login": {
+      "metaTitle": "Sign in",
+      "metaDescription": "Sign in to LexBau.",
+      "kicker": "Sign in",
+      "welcome": "Welcome back",
+      "emailIntro": "Enter the email address registered in your workspace.",
+      "emailLabel": "Email",
+      "submit": "Sign in",
+      "submitting": "Checking …",
+      "helpText": "Currently: email-lookup against the workspace. In production replaceable with magic link (Resend) or SSO — just swap the provider configuration in {filePath}.",
+      "errors": {
+        "emptyEmail": "Please enter your email address.",
+        "notFound": "This email is not registered in the active workspace. Please contact your workspace admin.",
+        "generic": "Sign-in failed. Please try again."
+      }
+    }
+  },
+  "legal": {
+    "impressum": {
+      "title": "Legal Notice",
+      "description": "Provider identification per § 5 DDG (formerly TMG) and § 18 MStV."
+    },
+    "datenschutz": {
+      "title": "Privacy Policy",
+      "description": "Information on the processing of personal data per Art. 13 GDPR."
+    },
+    "agb": {
+      "title": "Terms and Conditions",
+      "description": "Contract terms for using LexBau."
+    },
+    "rdg": {
+      "title": "RDG Notice",
+      "description": "Notes on the German Legal Services Act (RDG)."
+    }
+  },
+  "errors": {
+    "kicker": "Error",
+    "title": "Something went wrong.",
+    "description": "We couldn't load this page. Please try again. If the issue persists, a return to the home page often helps.",
+    "errorIdLabel": "Error ID:",
+    "retry": "Try again",
+    "backHome": "Back to home",
+    "notFound": {
+      "kicker": "404",
+      "title": "Page not found.",
+      "description": "The requested address does not exist or was moved.",
+      "backHome": "Back to home",
+      "viewProjects": "View projects"
+    }
+  }
+}

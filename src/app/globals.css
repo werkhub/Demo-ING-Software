@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Surfaces & Text — kozoa-Palette */
+  --color-bg: #fafaf7;
+  --color-bg-subtle: #f3f3ee;
+  --color-fg: #0a0a0a;
+  --color-fg-muted: #5a5a55;
+  --color-border: #e5e5e0;
+
+  /* Single accent — Dark-Blue im kozoa-Stil */
+  --color-accent: #1b3a5f;
+  --color-accent-hover: #284a75;
+  --color-accent-soft: #eef2f7;
+
+  /* Gedämpfte Status-Farben — Editorial-Stil statt Knall-SaaS */
+  --color-critical: #8b1e1e;
+  --color-critical-soft: #f5e6e6;
+  --color-critical-border: #e1c4c4;
+
+  --color-warning: #946400;
+  --color-warning-soft: #f5ede0;
+  --color-warning-border: #e0d2b3;
+
+  --color-success: #4a6e4a;
+  --color-success-soft: #e8efe8;
+  --color-success-border: #cdd9cd;
+
+  --color-info: #4a6485;
+  --color-info-soft: #e8edf3;
+  --color-info-border: #c8d2dd;
+
+  /* Typography — Geist Sans + Mono wie Website */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, monospace;
+
+  --tracking-tighter: -0.04em;
+  --tracking-tight: -0.02em;
+}
+
+.dark {
+  --color-bg: #0a0a0a;
+  --color-bg-subtle: #141414;
+  --color-fg: #fafaf7;
+  --color-fg-muted: #8a8a85;
+  --color-border: #262626;
+
+  --color-accent: #6b94c8;
+  --color-accent-hover: #8aaedc;
+  --color-accent-soft: #131c2a;
+
+  --color-critical: #d97a7a;
+  --color-critical-soft: #2a1414;
+  --color-critical-border: #4a2424;
+
+  --color-warning: #d4a85a;
+  --color-warning-soft: #2a2010;
+  --color-warning-border: #4a3a18;
+
+  --color-success: #8eb38e;
+  --color-success-soft: #162216;
+  --color-success-border: #2a3e2a;
+
+  --color-info: #8aa9c8;
+  --color-info-soft: #14202a;
+  --color-info-border: #243648;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: white;
+}
+
+/* Tighter scrollbar */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Mono UPPERCASE label — kozoa-Pattern */
+.label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-fg-muted);
+  font-weight: 500;
+}
+
+/* === PRINT-MODUS === */
+/* Auf Druck-Seiten ausblenden: Sidebar, Header, Footer, Cookie-Banner, Toasts */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  aside,
+  header,
+  footer,
+  [role="dialog"],
+  [aria-live="polite"] {
+    display: none !important;
+  }
+  /* Hauptlayout: kein Sidebar-Versatz mehr */
+  body > div > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  /* Keine Hover-Effekte beim Druck */
+  a {
+    color: black !important;
+    text-decoration: none !important;
+  }
+  /* Seitenumbrüche steuerbar */
+  .print-break {
+    page-break-after: always;
+  }
+  .print-no-break {
+    page-break-inside: avoid;
+  }
+  /* Print-only-/Screen-only-Hinweise */
+  .print-only {
+    display: block !important;
+  }
+  .screen-only {
+    display: none !important;
+  }
+}
+@media not print {
+  .print-only {
+    display: none !important;
+  }
+}

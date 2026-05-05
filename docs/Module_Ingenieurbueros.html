@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8"><title>LexBau — Modul-Übersicht für Ingenieurbüros</title><style>
+  :root { color-scheme: light; }
+  body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.5;
+    color: #1a1a1a;
+    max-width: 900px;
+    margin: 2em auto;
+    padding: 0 2em;
+  }
+  h1 { font-size: 22pt; border-bottom: 3px solid #1f2937; padding-bottom: 0.3em; margin-top: 1.5em; page-break-after: avoid; }
+  h2 { font-size: 16pt; border-bottom: 1px solid #d1d5db; padding-bottom: 0.2em; margin-top: 2em; page-break-after: avoid; }
+  h3 { font-size: 13pt; margin-top: 1.5em; color: #1f2937; page-break-after: avoid; }
+  h4 { font-size: 11.5pt; margin-top: 1.2em; color: #374151; page-break-after: avoid; }
+  p { margin: 0.6em 0; }
+  ul, ol { margin: 0.6em 0; padding-left: 1.6em; }
+  li { margin: 0.2em 0; }
+  hr { border: none; border-top: 1px solid #e5e7eb; margin: 2em 0; }
+  a { color: #1d4ed8; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code {
+    background: #f3f4f6;
+    padding: 0.1em 0.35em;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 0.92em;
+    color: #be185d;
+  }
+  pre code { display: block; padding: 0.8em; overflow-x: auto; }
+  blockquote {
+    border-left: 4px solid #d1d5db;
+    margin: 1em 0;
+    padding: 0.4em 1em;
+    background: #f9fafb;
+    color: #4b5563;
+  }
+  blockquote p { margin: 0.3em 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+    page-break-inside: avoid;
+    font-size: 0.95em;
+  }
+  th, td {
+    border: 1px solid #d1d5db;
+    padding: 0.4em 0.6em;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: #f3f4f6; font-weight: 600; }
+  tr:nth-child(even) td { background: #fafafa; }
+  strong { color: #111827; }
+  em { color: #374151; }
+  @page { size: A4; margin: 18mm 14mm; }
+  @media print {
+    body { margin: 0; max-width: none; padding: 0; }
+    h1, h2, h3, h4 { page-break-after: avoid; }
+    table, blockquote { page-break-inside: avoid; }
+  }
+</style></head><body>
+<h1>LexBau — Modul-Übersicht für Ingenieurbüros</h1>
+<blockquote>
+<p><strong>Zielgruppe:</strong> Interne Produktdokumentation für Vertrieb, Onboarding und Produktmanagement.
+<strong>Stand:</strong> 2026-05-05 · basierend auf Code-Verifikation gegen <code>src/lib/modules.ts</code> und Routen unter <code>src/app/</code>.
+<strong>Workspace-Typ:</strong> Diese Übersicht beschreibt ausschließlich Module, die für <code>workspaceRole = &quot;ingenieurbuero&quot;</code> sichtbar sind. Bauunternehmer-spezifische Module (z. B. NU-Pass-Through) sind ausgeklammert.</p>
+</blockquote>
+<hr>
+<h2>Inhaltsverzeichnis</h2>
+<ol>
+<li><a href="#lesehilfe">Lesehilfe</a></li>
+<li><a href="#sidebar-sektionen-im-%C3%BCberblick">Sidebar-Sektionen im Überblick</a></li>
+<li><a href="#sektion-1--arbeit-tagesgesch%C3%A4ft">Sektion 1 — Arbeit</a></li>
+<li><a href="#sektion-2--quick-actions">Sektion 2 — Quick-Actions</a></li>
+<li><a href="#sektion-3--bibliothek">Sektion 3 — Bibliothek</a></li>
+<li><a href="#sektion-4--verwaltung">Sektion 4 — Verwaltung</a></li>
+<li><a href="#hoai-leistungsphasen-matrix">HOAI-Leistungsphasen-Matrix</a></li>
+<li><a href="#status-gesamt%C3%BCbersicht">Status-Gesamtübersicht</a></li>
+<li><a href="#quellen--code-referenzen">Quellen &amp; Code-Referenzen</a></li>
+</ol>
+<hr>
+<h2>Lesehilfe</h2>
+<h3>Status-Legende</h3>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>✓ <strong>Live</strong></td>
+<td>Funktion ist im Code implementiert, nutzt echte Datenbank-Persistenz und ist im Produktiv-Einsatz nutzbar.</td>
+</tr>
+<tr>
+<td>⚙ <strong>Teilweise</strong></td>
+<td>Grundstruktur und Daten-Modell vorhanden, einzelne Sub-Funktionen oder UI-Eingabeflächen fehlen noch.</td>
+</tr>
+<tr>
+<td>⏳ <strong>Stub / In Entwicklung</strong></td>
+<td>Route ist erreichbar, Inhalte sind Mock-Daten oder Heuristik-Antworten. Voll-Implementierung in der Roadmap.</td>
+</tr>
+</tbody></table>
+<h3>Modul-Beschreibung — Aufbau</h3>
+<p>Pro Modul werden konsistent vier Aspekte beschrieben:</p>
+<ul>
+<li><strong>Zweck</strong> — was das Modul löst (1–2 Sätze)</li>
+<li><strong>Funktionen &amp; Features</strong> — was im Code passiert (Bullet-Liste)</li>
+<li><strong>Relevanz für Ingenieurbüros</strong> — Bezug zu HOAI-Leistungsphasen, BGB-/VOB/B-Pflichten, Bauüberwachung und typischen IB-Workflows</li>
+<li><strong>Technik</strong> — Datenmodell, Server Actions, ggf. KI-Anbindung</li>
+</ul>
+<h3>Workspace-Rolle „Ingenieurbüro&quot;</h3>
+<p>In <code>src/db/schema/workspaces.ts</code> wird die Rolle als Enum <code>workspaceRole</code> mit den Werten <code>bauunternehmer | bauherr | ingenieurbuero</code> geführt. Der Recht-Assistent und mehrere Module passen ihre Perspektive automatisch an: Ein IB sieht z. B. Mängelrügen aus Planer-Sicht (HOAI-Schnittstellen, Planungsfehler-Risiko) statt aus Auftragnehmer-Sicht.</p>
+<hr>
+<h2>Sidebar-Sektionen im Überblick</h2>
+<p>Die Navigation ist in vier Sektionen gegliedert (definiert in <a href="../src/lib/modules.ts">src/lib/modules.ts</a>):</p>
+<table>
+<thead>
+<tr>
+<th>Sektion</th>
+<th>Zweck</th>
+<th>Anzahl Module (für IB)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Arbeit</strong></td>
+<td>Tagesgeschäft mit DB-Persistenz: Vorgänge, Projekte, Bautagebuch, Fristen, Rechnungen, Stunden</td>
+<td>8 (inkl. Finanzen-Hub mit 4 Sub-Modulen)</td>
+</tr>
+<tr>
+<td><strong>Quick-Actions</strong></td>
+<td>Fokussierte Werkzeuge — meist aus einem Vorgang heraus aufgerufen, oft KI-gestützt</td>
+<td>3 (HOAI-Rechner, Analysen-Hub mit 3 Sub-Tools, Recht-Assistent)</td>
+</tr>
+<tr>
+<td><strong>Bibliothek</strong></td>
+<td>Referenzinhalte ohne Workflow-Zustand: Gesetze, Urteile, Vorlagen, Beweissicherung</td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Verwaltung</strong></td>
+<td>Workspace-Konfiguration, Compliance, Lizenzen</td>
+<td>3 (Workspace, HinSchG, Lizenz-Center)</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>Hinweis:</strong> Module mit <code>hideFromSidebar: true</code> (z. B. einzelne Finanz-Sub-Module) sind unter dem jeweiligen Hub-Eintrag erreichbar, haben aber keinen eigenen Sidebar-Link. Die Routen bleiben direkt aufrufbar.</p>
+</blockquote>
+<hr>
+<h2>Sektion 1 — Arbeit (Tagesgeschäft)</h2>
+<p>Die Sektion bündelt alle Module, in denen das Ingenieurbüro produktiv arbeitet — von der Projektanlage über die laufende Bauüberwachung bis hin zur Rechnungsstellung.</p>
+<h3>1.1 Dashboard ✓ Live · <code>/dashboard</code></h3>
+<p><strong>Zweck:</strong> Zentrale Übersichtsseite mit Live-Stats aus allen Bereichen.</p>
+<p><strong>Funktionen &amp; Features</strong></p>
+<ul>
+<li>Asynchrone Server Component — Daten werden bei jedem Aufruf aus SQLite frisch geladen (<code>force-dynamic</code>).</li>
+<li>Aggregierte KPIs: offene Vorgänge nach Risk-Score, fällige Fristen (kritisch/diese Woche/offen), aktive Projekte.</li>
+<li>Kürzlich erfasste Anfragen aus dem Recht-Assistenten.</li>
+<li>Quick-Access-Tiles auf häufig genutzte Module.</li>
+</ul>
+<p><strong>Relevanz für Ingenieurbüros</strong>
+Das Dashboard ist der morgendliche Anlaufpunkt für die Projektleitung. Es macht binnen Sekunden sichtbar, ob Mitwirkungsfristen gegenüber dem AG (BGB § 642) auslaufen, ob neue Mangelrügen oder Anordnungen offen sind und welche Honorarphasen in der laufenden Woche zu rechnen sind. Reduziert das Risiko, eine Frist zu verpassen — der häufigste Hebel für Honorar-Ausfälle.</p>
+<p><strong>Technik</strong></p>
+<ul>
+<li>Lese-Queries: <code>getProjects()</code>, <code>getFristen()</code>, <code>getVorgangStats()</code>, <code>getAllQueries()</code></li>
+<li>Workspace-isoliert (jeder User sieht nur seine Workspace-Daten)</li>
+</ul>
+<hr>
+<h3>1.2 Vorgänge ✓ Live · <code>/vorgaenge</code> · Badge: NEU</h3>
+<p><strong>Zweck:</strong> Zentrales Posteingangs- und Aufgaben-Management für klärungsbedürftige Sachverhalte.</p>
+<p><strong>Funktionen &amp; Features</strong></p>
+<ul>
+<li>Filter-Bar: Projekt, Status (offen/in Arbeit/erledigt), Kategorie, Volltextsuche, Risk-Score.</li>
+<li>Tabellen-Ansicht mit Zuordnung zu Workspace-Mitgliedern.</li>
+<li>Vorgangs-Erstellung <strong>automatisch</strong> aus dem Vertrags-Scan (Server Action <code>createVorgangFromContract()</code>).</li>
+<li>Vorgangs-Erstellung <strong>automatisch</strong> bei Plausi-Verstößen aus dem Stunden-Modul (&gt;12h/Tag).</li>
+<li>Risk-Score-Anzeige zur Priorisierung.</li>
+</ul>
+<p><strong>Relevanz für Ingenieurbüros</strong>
+Vorgänge sind das Workflow-Rückgrat: Jede Klärungsanfrage des AG, jede Rüge eines ausführenden Unternehmens, jede automatisch erkannte Risiko-Klausel landet hier. Für ein IB mit mehreren parallelen Bauvorhaben ist die strukturierte Verwaltung dieser „losen Enden&quot; der Unterschied zwischen sauberer Projektsteuerung und stillen Honorar-Verlusten. Bezug zur HOAI: betrifft alle Leistungsphasen, besonders LP 7 (Mitwirkung Vergabe), LP 8 (Objektüberwachung), LP 9 (Objektbetreuung).</p>
+<p><strong>Technik</strong></p>
+<ul>
+<li>Tabelle <code>vorgaenge</code>: title, status, category, riskScore, createdAt, updatedAt, projectId, assigneeId</li>
+<li>Verknüpfung zu <code>projects</code> und <code>users</code> über workspaceId</li>
+</ul>
+<hr>
+<h3>1.3 Projekte ✓ Live · <code>/projekte</code></h3>
+<p><strong>Zweck:</strong> Stammdatenverwaltung aller Bauvorhaben mit projekt-spezifischen Compliance-Indikatoren.</p>
+<p><strong>Funktionen &amp; Features</strong></p>
+<ul>
+<li>Zwei Ansichten: Card-Layout (visuelle Übersicht) und Table-Layout (datendichte Liste).</li>
+<li>Filter und Sortierung: Status, Risk-Flag, Anzahl offener Nachträge, Sicherheiten-Status, Volltextsuche.</li>
+<li><strong>HOAI-spezifische Felder am Projekt:</strong> <code>hoaiHonorarsummeNettoCents</code>, <code>hoaiParagraph</code> (z. B. § 35 Gebäudeplanung), <code>hoaiLeistungsPhase</code>.</li>
+<li>Spaltenanzeige: Subcontractor-Compliance, Projektwertentwicklung, kritische Issues.</li>
+<li>Server Action <code>createProject()</code> für Neuanlage.</li>
+</ul>
+<p><strong>Relevanz für Ingenieurbüros</strong>
+Die HOAI-Verankerung pro Projekt ist der zentrale Mehrwert für IB: Honorarsumme, Honorarparagraph (§§ 34/35 Gebäude, § 47 Ingenieurbauwerke, § 51 Tragwerksplanung, § 56 Technische Ausrüstung) und aktuelle Leistungsphase werden direkt im Projekt gespeichert und sind später Grundlage für Abschlagsrechnungen, Liquiditätsplanung und HOAI-Rechner-Vorbelegungen. Ein durchgängiges HOAI-Stammdatenmodell, das in die Workflows weiterläuft.</p>
+<p><strong>Technik</strong></p>
+<ul>
+<li>Tabelle <code>projects</code> mit erweiterten HOAI-Spalten</li>
+<li>Queries: <code>getProjectsTableRows()</code>, <code>getProjectsWithStats()</code></li>
+<li>Verknüpfungen zu <code>fristen</code>, <code>vorgaenge</code>, <code>nachtraege</code>, <code>sicherheiten</code> über projectId</li>
+</ul>
+<hr>
+<h3>1.4 Bautagebuch ✓ Live · <code>/bautagebuch</code></h3>
+<p><strong>Zweck:</strong> Tagesweise Bauablauf-Dokumentation mit automatischer Erkennung rechtlich relevanter Trigger.</p>
+<p><strong>Funktionen &amp; Features</strong></p>
+<ul>
+<li>Tageseintrag mit Wetter, Temperatur, Personalstunden (eigene + NU), eingesetzte Geräte.</li>
+<li>Freitextfeld für Tagesgeschehen mit Projekt-Selektion.</li>
+<li><strong>Co-Pilot-Klassifikation:</strong> automatische Erkennung von Triggern wie <em>Anordnung des AG</em>, <em>Behinderung</em>, <em>Bedenkenanmeldung</em>, <em>Mangelrüge</em>, <em>Zahlungsverzug</em>.</li>
+<li>Urgency-Indikator und Vorschlag der nächsten Handlung pro Eintrag.</li>
+<li>Listen-Ansicht mit Trigger-Labels.</li>
+</ul>
+<p><strong>Relevanz für Ingenieurbüros</strong>
+Im Rahmen der <strong>Objektüberwachung (HOAI § 34 LP 8)</strong> ist die lückenlose Bautagebuchführung Pflicht — und in Streitfällen oft das einzige Beweismittel. LexBau hebt das Bautagebuch von einer reinen Dokumentationspflicht zu einem aktiven Frühwarnsystem: Ein Tagebuch-Eintrag wie <em>„Pläne für TGA fehlen seit 2 Wochen&quot;</em> triggert automatisch den Hinweis auf eine Behinderungsanzeige nach § 6 Abs. 1 VOB/B. Für IB mit Bauüberwachungsverantwortung ist das die wichtigste Haftungsabsicherung.</p>
+<p><strong>Technik</strong></p>
+<ul>
+<li>Tabelle <code>bautagebuchEntries</code>: text, category, entryDate, weatherCondition, temperatureCelsius, staffHoursOwn, staffHoursSubcontractors, equipment, trigger, urgency, suggestion, projectId</li>
+<li>Queries: <code>getBautagebuchEntries()</code>, <code>getBautagebuchStats()</code></li>
+</ul>
+<hr>
+<h3>1.5 Fristen ✓ Live · <code>/fristen</code></h3>
+<p><strong>Zweck:</strong> Zentrale Fristen-Übersicht mit Dringlichkeitsklassifikation und Kalender-Export.</p>
+<p><strong>Funktionen &amp; Features</strong></p>
+<ul>
+<li>Klassifikation: kritisch (≤ 1 Tag), diese Woche, offen.</li>
+<li>Erfassung mit Aufgabentext, Deadline, Rechtsgrundlage (z. B. „§ 13 Abs. 5 VOB/B&quot;).</li>
+<li>iCal-Export für Outlook, Google Calendar, Apple Calendar.</li>
+<li>Server Actions: <code>toggleFristCompleted()</code>, <code>deleteFrist()</code>.</li>
+<li>Persistenter RDG-Banner (Hinweis: Information, keine Rechtsberatung).</li>
+</ul>
+<p><strong>Relevanz für Ingenieurbüros</strong>
+Fristen sind in Bauprozessen scharf und reaktionspflichtig: Rüge-Antwortfrist, Mitwirkungsfrist gegenüber AG, Bedenkenanmeldungs-Frist bei erkannten Planungsfehlern, Mängelbeseitigungsfristen, Zahlungsfristen aus Honorarrechnungen (BGB § 650g Abs. 4). Eine versäumte Frist kann ein ganzes Honorar gefährden — insbesondere bei Verjährungsfristen nach § 634a BGB (5 Jahre Bauwerk). Der iCal-Export schließt die Lücke zu bestehenden Kalendersystemen, ohne Doppelpflege.</p>
+<p><strong>Technik</strong></p>
+<ul>
+<li>Tabelle <code>fristen</code>: task, deadline, completed, daysRemaining, urgency, legalBasis, projectId</li>
+<li>Query: <code>getAllFristen()</code> mit Projekt-Join</li>
+</ul>
+<hr>
+<h3>1.6 Anzeigen ✓ Live · <code>/anzeigen</code> · Badge: NEU</h3>
+<p><strong>Zweck:</strong> Spezialisiertes Modul für Behinderungsanzeigen und Bedenkenanmeldungen nach VOB/B mit Versand- und Zugangs-Tracking.</p>
+<p><strong>Funktionen &amp; Features</strong></p>
+<ul>
+<li>Zwei Anzeigentypen: Behinderungsanzeige (§ 6 VOB/B), Bedenkenanmeldung (§ 4 Abs. 3 VOB/B).</li>
+<li>Workflow: Entwurf → Versendet → Zugang bestätigt → ggf. Überfällig.</li>
+<li>Status-Badges in der Übersicht.</li>
+<li>Rechtshinweise direkt in der UI (z. B. Formerfordernisse).</li>
+</ul>
+<p><strong>Relevanz für Ingenieurbüros</strong>
+Auch wenn Behinderungsanzeigen formal vom ausführenden Unternehmen kommen, ist das IB als bauüberwachender Planer derjenige, der sie <strong>erkennt, bewertet und kommuniziert</strong> — und der bei eigenen Planungsfehlern selbst in die Pflicht zur Bedenkenanmeldung kommt (§ 4 Abs. 3 VOB/B analog für Planungsleistungen, § 650p BGB für Architekten- und Ingenieurverträge). Das Modul stellt sicher, dass die formalen Anforderungen (Schriftform, konkreter Bezug, rechtzeitig vor Ausführung) eingehalten werden.</p>
+<p><strong>Technik</strong></p>
+<ul>
+<li>Tabelle <code>anzeigen</code>: title, kind (behinderung|bedenken), subjectMatter, sentAt, acknowledgedAt, status, projectId</li>
+<li>Queries: <code>getAnzeigen()</code>, <code>getAnzeigenStats()</code></li>
+</ul>
+<hr>
+<h3>1.7 Stunden ✓ Live · <code>/stunden</code> · Badge: NEU</h3>
+<p><strong>Zweck:</strong> Wochenweise Personal-Stundenerfassung mit Lohnlauf-Lock und Plausibilitätsprüfung.</p>
+<p><strong>Funktionen &amp; Features</strong></p>
+<ul>
+<li>Tagesweise Eingabe pro Mitarbeiter und Gewerk.</li>
+<li>ISO-Wochen-Navigation (vorherige/nächste Kalenderwoche).</li>
+<li><strong>Wochen-Lock nach Lohnlauf:</strong> Locking-Mechanismus mit Sperr-Datum, sperrendem Nutzer und Notizen — verhindert nachträgliche Manipulation.</li>
+<li><strong>Plausi-Check &gt;12 h/Tag:</strong> überschrittene Tage erzeugen automatisch einen Vorgang im Vorgangs-Modul.</li>
+<li>Aggregation pro Mitarbeiter+Tag mit Stundensatz (in Cent gespeichert).</li>
+</ul>
+<p><strong>Relevanz für Ingenieurbüros</strong>
+Für IB mit eigenen Bauüberwachern, Tragwerksplanern oder Vermessungsteams ist die saubere Stundenerfassung doppelt relevant: einerseits als Grundlage für stundenbasierte Honorarvereinbarungen nach HOAI § 6 Abs. 3 (Zeithonorar), andererseits als Nachweis für Mehraufwand bei Auftraggeberverschulden. Die Lock-Funktion ist GoBD-relevant; die &gt;12 h-Plausi schützt vor Falscheingaben, die in der Lohnabrechnung teuer werden können.</p>
+<p><strong>Technik</strong></p>
+<ul>
+<li>Tabellen: <code>mitarbeiter</code> (name, gewerk, aktiv), <code>stunden</code> (datum, stunden, stundensatzCents), <code>stundenWochenLock</code> (jahr, kw, gesperrtAm, gesperrtVon, notes)</li>
+<li>Server Actions für Lock/Unlock</li>
+</ul>
+<hr>
+<h3>1.8 Finanzen-Hub ✓ Live · <code>/finanzen</code></h3>
+<p>Der Finanzen-Hub bündelt fünf Sub-Module zu einer durchgängigen Finanz- und Buchhaltungs-Strecke. Im Sidebar erscheint nur „Finanzen&quot;; die Sub-Module sind über den Hub und über Direkt-URLs erreichbar.</p>
+<p><strong>Hub-Funktionen</strong></p>
+<ul>
+<li>Fünf Cards mit Live-Stats: Eingangsrechnungen (Anomalien, offene Posten), E-Rechnung-Import, Ausgangsrechnungen (Mahnungen, offene Forderungen), DATEV-Export (letztes Export-Datum), Liquidität (Szenario-Anzahl, letztes Update).</li>
+</ul>
+<p><strong>Relevanz für Ingenieurbüros</strong>
+Auch IB ohne eigene Lohnbuchhaltung profitieren: Ausgangsrechnungen (HOAI-Honorarrechnungen mit Abschlag/Schluss), Eingangsrechnungen (Subplaner, Sachverständige, externe Statik), DATEV-Export für den Steuerberater, und Liquiditätsplanung gerade bei langlaufenden HOAI-Verträgen mit Abschlagszahlungen über mehrere Jahre.</p>
+<h4>1.8.1 Eingangsrechnungen ✓ Live (POC) · <code>/rechnungen</code></h4>
+<ul>
+<li><strong>Anomalie-Erkennung</strong> mit Score und Anzahl: Plausibilitätsprüfung, Preissprünge gegenüber Vergleichsperioden, Doppelbuchungs-Verdacht, Vertragsabgleich.</li>
+<li>XRechnung-/ZUGFeRD-Format-Erkennung mit Validierungs-Status.</li>
+<li>Live-Tabelle mit anomalyCount und anomalyScore.</li>
+<li><strong>Tabelle:</strong> <code>rechnungen</code> (vendor, amount, invoiceDate, anomalyCount, anomalyScore, xmlFormat, xmlValidationStatus).</li>
+</ul>
+<p><strong>IB-Bezug:</strong> Kontrolle der Subplaner- und Sachverständigenrechnungen, die in Honorardurchläufe weitergereicht werden — hier entstehen sonst die teuersten Doppelbuchungen.</p>
+<h4>1.8.2 E-Rechnung-Import ✓ Live · <code>/eingangsrechnungen/upload</code> · Badge: NEU</h4>
+<ul>
+<li>Upload XML-Format: <strong>XRechnung (UBL/CII), ZUGFeRD</strong>, max. 5 MB.</li>
+<li>Server Action <code>uploadErechnungXmlRedirect()</code> parst XML, prüft Pflichtfelder (Lieferant, Betrag, Datum, Leistungsbeschreibung).</li>
+<li>Bei fehlerhaften Pflichtfeldern: automatische Erstellung eines Klärungs-Vorgangs.</li>
+<li>Fehlerbehandlung mit Redirect-Pattern.</li>
+</ul>
+<p><strong>IB-Bezug:</strong> Seit 2025 ist E-Rechnung im B2B verpflichtend. IB als Empfänger müssen XRechnung/ZUGFeRD korrekt verarbeiten können — die XML-Validierung schützt vor formal ungültigen Rechnungen, die zum Vorsteuer-Abzugsverlust führen könnten.</p>
+<h4>1.8.3 Ausgangsrechnungen ✓ Live · <code>/ausgangsrechnungen</code> · Badge: NEU</h4>
+<ul>
+<li><strong>Abschlags- und Schlussrechnungen</strong> über alle Projekte hinweg.</li>
+<li>Workspace-weite, fortlaufende und unveränderbare Rechnungsnummern (Steuerrecht-konform).</li>
+<li>Stats: Entwürfe, offene Forderungen, fällige Mahnungen, Verzugstage.</li>
+<li>Format-Badges: XRechnung-generiert, ZUGFeRD-generiert.</li>
+<li><strong>§ 13b Reverse-Charge</strong>-Erkennung im Bau-Bereich.</li>
+<li><strong>Tabelle:</strong> <code>ausgangsrechnungen</code> (number, kind [abschlag|schluss], status, invoiceDate, dueDate, payoutGross, paidAmount, xrechnungGeneratedAt, zugferdGeneratedAt, reverseCharge).</li>
+</ul>
+<p><strong>IB-Bezug:</strong> HOAI-Honorarrechnungen folgen einer eigenen Logik: Abschlagsrechnungen nach Leistungsphasen-Fortschritt, Schlussrechnung nach Leistungsabnahme oder Kündigung. Die Plattform unterstützt beide Typen und sorgt für VOB/B § 16 / BGB § 650g-konforme Zahlungsabwicklung. Verzugs-Berechnung schützt vor unbeabsichtigtem Verlust von Verzugszinsen.</p>
+<h4>1.8.4 DATEV-Export ⚙ Teilweise · <code>/finanzen/datev</code> · Badge: NEU</h4>
+<ul>
+<li>Buchungsstapel-CSV nach <strong>DATEV-EXTF</strong>-Standard.</li>
+<li>Hub-Card zeigt letztes Export-Datum und Historie (letzte 5 Exporte).</li>
+<li><strong>In Entwicklung:</strong> Direktes Eingabe-Interface für Export-Konfiguration (Zeitraum, Sachkonten-Mapping).</li>
+<li><strong>Tabelle:</strong> <code>datevExports</code>.</li>
+</ul>
+<p><strong>IB-Bezug:</strong> Der DATEV-Export ist die Standard-Schnittstelle zum Steuerberater im DACH-Raum. Für IB mit externer Buchhaltung essenziell, um Doppelerfassung zu vermeiden.</p>
+<h4>1.8.5 Liquiditätsplanung ⚙ Teilweise · <code>/finanzen/liquiditaet</code> · Badge: NEU</h4>
+<ul>
+<li>Cashflow-Forecast aus offenen Ausgangsrechnungen, NU-Eingangsrechnungen und Lohn (aus Stunden-Modul).</li>
+<li><strong>Frühwarnung</strong> bei prognostiziertem Saldo ≤ 0 in den nächsten 14 Tagen.</li>
+<li>Hub-Card zeigt Anzahl Szenarien und letzten Update-Zeitpunkt.</li>
+<li><strong>In Entwicklung:</strong> Eingabe-Seite für Szenario-Konfiguration.</li>
+<li><strong>Tabelle:</strong> <code>liquiditaetSzenarien</code>.</li>
+</ul>
+<p><strong>IB-Bezug:</strong> Bei HOAI-Projekten mit langen Laufzeiten und Abschlagszahlungen, die auf Genehmigungsbescheide oder Bauabschnitte gekoppelt sind, ist Liquiditätsplanung kritisch — vor allem für kleinere Büros mit konzentrierter Auftragslast.</p>
+<hr>
+<h2>Sektion 2 — Quick-Actions</h2>
+<p>Quick-Actions sind fokussierte Werkzeuge, oft KI-gestützt. Sie werden meist aus einem Vorgang oder einer Frist heraus aufgerufen.</p>
+<h3>2.1 HOAI-Rechner ✓ Live · <code>/hoai-rechner</code> · Badge: NEU · <strong>IB-exklusiv</strong></h3>
+<blockquote>
+<p>Dieses Modul ist über <code>requiresWorkspaceType: &quot;ingenieurbuero&quot;</code> ausschließlich für Ingenieurbüro-Workspaces sichtbar.</p>
+</blockquote>
+<p><strong>Zweck:</strong> Honorarberechnung nach HOAI 2021 für die wichtigsten Leistungsbilder.</p>
+<p><strong>Funktionen &amp; Features</strong></p>
+<ul>
+<li>Honorartafeln für:<ul>
+<li><strong>§ 35 HOAI</strong> — Gebäudeplanung</li>
+<li><strong>§ 47 HOAI</strong> — Ingenieurbauwerke</li>
+<li><strong>§ 51 HOAI</strong> — Tragwerksplanung</li>
+<li><strong>§ 56 HOAI</strong> — Technische Ausrüstung</li>
+</ul>
+</li>
+<li><strong>Lineare Interpolation</strong> zwischen den Honorartafel-Stützstellen für anrechenbare Kosten zwischen den Tabellenwerten.</li>
+<li>Honorarzonen-Auswahl (I bis V).</li>
+<li>Hinweis auf Verwendung in Projekten: HOAI-Werte können direkt am Projekt hinterlegt werden — der Rechner ist Quick-Tool, das Projekt ist Single-Source-of-Truth.</li>
+</ul>
+<p><strong>Relevanz für Ingenieurbüros</strong>
+Dies ist das Kernwerkzeug jedes IB. HOAI-Honorarberechnungen sind Pflichtbestandteil jedes Angebots, jeder Beauftragung und jeder Schlussrechnung. Die saubere Interpolation zwischen Stützstellen ist nicht trivial — viele Excel-Lösungen rechnen hier falsch. LexBau löst das in einer einheitlichen, im Code geprüften Implementierung. Das EMERALD-„NEU&quot;-Badge markiert das Modul als Premium-Feature für IB-Kunden.</p>
+<p><strong>Technik</strong></p>
+<ul>
+<li>Client-Component <code>HoaiCalculator</code> (keine DB-Persistenz, rein clientseitig).</li>
+<li>HOAI-Tafeldaten in Code-Konstanten — Aktualisierung bei HOAI-Novellen über Code-Update.</li>
+</ul>
+<hr>
+<h3>2.2 Recht-Assistent ⏳ Stub (KI-Roadmap) · <code>/recht-assistent</code> · Badge: KI</h3>
+<p><strong>Zweck:</strong> Konversations-Interface für baurechtliche Fragen mit Norm-Bezug.</p>
+<p><strong>Funktionen &amp; Features (heute)</strong></p>
+<ul>
+<li>Freitext-Anfrage mit Auswahl des Projekt-Kontexts.</li>
+<li>Mock-Szenarien aus <code>lib/data.ts</code> liefern fertige Demo-Antworten zu typischen Standardfällen (Mängelrüge mit unzureichender Frist, fehlende TGA-Pläne, etc.).</li>
+<li><strong>Workspace-Rollen-spezifische Perspektive:</strong> ein IB-Workspace bekommt IB-Antworten (Planer-Sicht, HOAI-Bezug), ein Bauunternehmen bekommt Auftragnehmer-Sicht.</li>
+<li>Persistente Anfragen-Historie pro Workspace.</li>
+<li>Persistenter RDG-Banner.</li>
+</ul>
+<p><strong>Funktionen &amp; Features (Roadmap, Phase 1)</strong></p>
+<ul>
+<li>Live-Anbindung an Claude-API mit RAG über Gesetzestexte und Urteile.</li>
+<li>Quellenangaben mit Norm-Zitat und BGH-Az.</li>
+</ul>
+<p><strong>Relevanz für Ingenieurbüros</strong>
+IB stehen zwischen Bauherr und ausführendem Unternehmen — und damit oft im Zentrum baurechtlicher Streitfälle. Der Recht-Assistent soll eine schnelle erste Einschätzung mit Norm- und Rechtsprechungs-Bezug liefern, bevor (bei wirtschaftlich relevanten Streitwerten) ein Anwalt eingeschaltet wird. Die rollen-spezifische Perspektive ist hier entscheidend: Eine Mängelrüge muss aus IB-Sicht anders bewertet werden als aus Bauunternehmer-Sicht (Planungsfehler-Risiko vs. Ausführungsmangel-Verteidigung).</p>
+<p><strong>Technik</strong></p>
+<ul>
+<li>Tabelle <code>queries</code>: question, category, response, createdAt, workspaceId</li>
+<li>Server Action: <code>createQuery()</code></li>
+<li>Geplant: Claude-API + RAG auf <code>legalChunks</code> und <code>case_decisions</code></li>
+</ul>
+<hr>
+<h3>2.3 Analysen-Hub ⚙ Teilweise · <code>/analysen</code> · Badge: PRO</h3>
+<p>Hub für drei spezialisierte KI-/Heuristik-Werkzeuge. Im Sidebar nur „Analysen&quot;; Sub-Tools per Hub oder Direkt-URL.</p>
+<p><strong>Hub-Funktionen</strong></p>
+<ul>
+<li>Statistiken: erfasste Verträge, Anzahl High-Risk- und Medium-Risk-Befunde.</li>
+<li>Quick-Cards zu den drei Sub-Tools.</li>
+</ul>
+<h4>2.3.1 Vertrags-Scan ✓ Live · <code>/vertrag</code> · Badge: PRO</h4>
+<ul>
+<li><strong>Vertragstext-Upload</strong> mit automatischem Scan auf Risiko-Klauseln:<ul>
+<li>Vertragsstrafen / Pönale-Klauseln</li>
+<li>Sicherheitseinbehalte über zulässigem Maß</li>
+<li>Unangemessene Zahlungsfristen</li>
+<li>AGB-Konflikte mit BGB/VOB/B</li>
+<li>Fehlende Vorbehalte (z. B. bei Anordnungen, Mehrkosten)</li>
+</ul>
+</li>
+<li>Findings mit Belegstelle (Markup im Original) und Rechtsgrundlage.</li>
+<li>Server Actions: <code>rescanContract()</code>, <code>createVorgangFromContract()</code>, <code>deleteContract()</code>.</li>
+<li><strong>Tabelle:</strong> <code>contracts</code> (kind, title, projectId, signedAt, partyAg, riskScore, riskFindings [JSON Finding[]]).</li>
+</ul>
+<p><strong>IB-Bezug:</strong> Vor jeder Beauftragung sollte der Architekten-/Ingenieurvertrag (BGB §§ 650p–650t) auf Risiken geprüft werden. Häufige Fallstricke: Honorar-Deckelung bei Kostenerhöhung, Haftungsbegrenzung zugunsten des AG, unklare Leistungsphasen-Abgrenzung. Der Scan erzeugt aus jedem High-Risk-Befund direkt einen Vorgang — der Workflow läuft sauber bis zur Klärung.</p>
+<h4>2.3.2 Rüge-Analyse ⏳ Heuristik · <code>/ruege-analyse</code> · Badge: PRO</h4>
+<ul>
+<li><strong>Heute (Heuristik):</strong> Eingehender Mängelrüge-Text wird auf formelle Wirksamkeit geprüft (konkrete Mangel-Bezeichnung, Frist, Schriftform), materielle Berechtigung wird grob bewertet, Antwortvorschlag wird generiert.</li>
+<li>Persistenter RDG-Banner.</li>
+<li><strong>Roadmap (Phase 1):</strong> Volltext-Analyse mit Claude-API + RAG auf VOB/B-Kommentar und BGH-Rechtsprechung.</li>
+</ul>
+<p><strong>IB-Bezug:</strong> Bei IB-Generalplaner-Verträgen kommen Mängelrügen sowohl gegen Planungsleistungen (BGB § 634) als auch gegen Bauüberwachungsfehler. Die formelle Prüfung — ist die Frist angemessen, ist der Mangel konkret bezeichnet, ist die Schriftform gewahrt — ist Standard-Erstreaktion. Die Heuristik liefert das in Sekunden.</p>
+<h4>2.3.3 Anordnungs-Check ✓ Live · <code>/anordnung</code> · Badge: PRO</h4>
+<ul>
+<li><strong>AG-Kommunikation</strong> (E-Mail/WhatsApp/Brief-Text einfügen).</li>
+<li>Klassifikation als <strong>§ 1 Abs. 3 VOB/B</strong> (Anordnung Leistungsänderung) oder <strong>§ 1 Abs. 4 VOB/B</strong> (zusätzliche Leistung).</li>
+<li>Live-Heuristik mit Score 0–100 (<code>analyzeAnordnung()</code> aus <code>lib/anordnung-analyze</code>).</li>
+<li>Stichwort-Match für anordnende Verben („wir bitten Sie&quot;, „bitte führen Sie aus&quot;, etc.).</li>
+<li>Deadline-Erkennung im Text.</li>
+<li>Empfehlungen mit Frist (z. B. „Mehrkosten-Ankündigung innerhalb 7 Tagen&quot;).</li>
+<li>Risk-Warning bei verdeckten Anordnungen ohne Mehrkosten-Vorbehalt.</li>
+</ul>
+<p><strong>IB-Bezug:</strong> Eine der gefährlichsten Schnittstellen für IB ist die mündliche oder formlose AG-Anordnung, die als „Selbstverständlichkeit&quot; mitläuft, aber tatsächlich Mehrleistung im Sinne § 1 Abs. 3/4 VOB/B darstellt. Wer diese nicht <strong>vor Ausführung</strong> als Mehrleistung qualifiziert und ankündigt, verliert den Mehrkostenanspruch (BGH VII ZR 201/18). Der Anordnungs-Check ist genau dieser Frühwarnsensor.</p>
+<hr>
+<h2>Sektion 3 — Bibliothek</h2>
+<p>Referenzinhalte ohne Workflow-Zustand: das juristische Nachschlagewerk der Plattform.</p>
+<h3>3.1 Gesetzestexte ✓ Live · <code>/gesetze</code></h3>
+<p><strong>Zweck:</strong> Durchsuchbare, paragraph-basierte Datenbank der zentralen Bauvorschriften.</p>
+<p><strong>Funktionen &amp; Features</strong></p>
+<ul>
+<li>Inhalte:<ul>
+<li><strong>BGB §§ 631–650v</strong> (Werkvertrag, Bauvertrag, Architekten-/Ingenieurvertrag) — vollständig automatisch von gesetze-im-internet.de geladen</li>
+<li><strong>HOAI 2021</strong> — vollständig automatisch geladen</li>
+<li><strong>VOB/A, VOB/B, VOB/C</strong> — paraphrasierte Zusammenfassungen mit Deep-Links zu juris/DIN Media/beck-online (Volltext beim jeweils bestehenden Abo)</li>
+</ul>
+</li>
+<li>Suchformular mit Volltextsuche (ab 2 Zeichen).</li>
+<li>Cards mit Lizenz-Status (Frei vs. Lizenziert) und Quellenangabe.</li>
+<li>VOB-Hinweis: Fair-Use-Zitatrecht (§ 51 UrhG); Volltext-Lizenz über Tier-Migration verfügbar.</li>
+</ul>
+<p><strong>Relevanz für Ingenieurbüros</strong>
+Die HOAI ist das Honorar-Grundgesetz jedes IB; die §§ 631 ff. BGB regeln Werkvertragsrecht und seit 2018 explizit Architekten-/Ingenieurverträge (§§ 650p–650t BGB). VOB/B kommt über AG-AGB regelmäßig zur Anwendung, gerade bei öffentlichen Auftraggebern. Eine paragraph-genaue, durchsuchbare Plattform-Datenbank — ohne Sprung in Browser-Tabs — beschleunigt die juristische Arbeit erheblich.</p>
+<p><strong>Technik</strong></p>
+<ul>
+<li>Tabelle <code>legalChunks</code>: source (bgb|hoai|vob_a|vob_b|vob_c), content, paragraph, licensedContent, licensedSourceId</li>
+<li>Befehle: <code>npm run db:fetch-laws</code> (BGB+HOAI von gesetze-im-internet.de)</li>
+</ul>
+<hr>
+<h3>3.2 Urteile ✓ Live · <code>/urteile</code></h3>
+<p><strong>Zweck:</strong> Indizierte BGH-Rechtsprechung aus den baurelevanten Senaten.</p>
+<p><strong>Funktionen &amp; Features</strong></p>
+<ul>
+<li>Inhalte: <strong>BGH-Entscheidungen</strong> aus den Senaten <strong>VII. ZR</strong> (Werkvertragsrecht — zentral für Bauverträge) und <strong>V. ZR</strong> (Sachenrecht).</li>
+<li>Indizierung über das offizielle ECLI-Verzeichnis des BMJ (rechtsprechung-im-internet.de).</li>
+<li>Filter: Gericht, Jahr, Volltextsuche.</li>
+<li>Statistiken: Gesamt, Verteilung VII. ZR vs. V. ZR, Verteilung nach Senaten.</li>
+<li>Volltext bleibt beim BMJ einsehbar (Metadaten gemeinfrei nach § 5 UrhG, Volltext nicht in der DB gespiegelt).</li>
+</ul>
+<p><strong>Relevanz für Ingenieurbüros</strong>
+Die BGH-Rechtsprechung des VII. Zivilsenats ist die Schlüsselquelle für alle Streitfälle rund um Architekten-/Ingenieurvertrag, Mängelhaftung, Honorarberechnung, Abschlagsforderungen. Die direkte Az.-/ECLI-Verknüpfung ist die Brücke zur juristischen Recherche.</p>
+<p><strong>Technik</strong></p>
+<ul>
+<li>Tabelle <code>case_decisions</code>: az, date, court, title, ecli, decisionType</li>
+<li>Befehl: <code>npm run db:fetch-cases</code> (idempotent, automatische Aktualisierung)</li>
+</ul>
+<hr>
+<h3>3.3 Vorlagen ⏳ Stub · <code>/vorlagen</code></h3>
+<p><strong>Zweck:</strong> Zentraler Speicher für wiederkehrende Schriftstücke (Verträge, Aushänge, Anschreiben).</p>
+<p><strong>Funktionen &amp; Features (heute)</strong></p>
+<ul>
+<li>Server-Component lädt Projekt-Meta (AG, Baustellenadresse, Vertragsdatum, Autor) sowie Workspace-Daten (juristischer Name).</li>
+<li>Übergabe an Client-Component <code>VorlagenClient</code> (UI in Entwicklung).</li>
+</ul>
+<p><strong>Funktionen &amp; Features (Roadmap)</strong></p>
+<ul>
+<li>Vertrags-Vorlagen mit projekt-spezifischer Vorbelegung</li>
+<li>Aushang-Templates (Baustellenschilder, Sicherheits-Aushänge)</li>
+<li>Anschreiben-Templates (Mahnungen, Bedenkenanmeldungen)</li>
+</ul>
+<p><strong>Relevanz für Ingenieurbüros</strong>
+Vorlagen mit automatischer Vorbelegung von Projekt- und Workspace-Daten sparen pro Vorgang Minuten — über ein Jahr Stunden. Besonders relevant: Honorarrechnungs-Vorlagen mit HOAI-Daten aus dem Projekt, Bedenkenanmeldungs-Vorlagen mit Norm-Bezug.</p>
+<p><strong>Technik</strong></p>
+<ul>
+<li>Lese-Operationen auf <code>projects</code> (id, identifier, name, ag, siteAddress, contractDate), <code>users</code> (name, roleLabel), <code>workspaces</code> (legalName)</li>
+</ul>
+<hr>
+<h3>3.4 Beweissicherung ⏳ Stub · <code>/beweis</code></h3>
+<p><strong>Zweck:</strong> Strukturierte Foto-/Video-/Notizen-Dokumentation als Beweissicherung bei kritischen Bauereignissen.</p>
+<p><strong>Funktionen &amp; Features (heute)</strong></p>
+<ul>
+<li>Server-Component lädt Projekte und vorhandene Beweis-Checklisten.</li>
+<li>Übergabe an Client-Component <code>BeweisClient</code> (UI in Entwicklung).</li>
+</ul>
+<p><strong>Funktionen &amp; Features (Roadmap)</strong></p>
+<ul>
+<li>Anlassbezogene Checklisten (z. B. „Vor Verputzen&quot;, „Nach Wassereintritt&quot;, „Übergabe&quot;).</li>
+<li>Foto-Upload mit Geo- und Zeitstempel.</li>
+<li>Verknüpfung zu Vorgang oder Frist.</li>
+</ul>
+<p><strong>Relevanz für Ingenieurbüros</strong>
+Im Rahmen der Bauüberwachung (LP 8) ist Beweissicherung die wichtigste Versicherung gegen spätere Mangelvorwürfe. Strukturierte Checklisten („Was muss vor dem Verputzen fotografiert werden?&quot;) schützen vor vergessenen Aufnahmen, die später nicht mehr nachholbar sind. Ein typischer IB-Workflow: Beweissicherung vor jeder verdeckten Leistung.</p>
+<p><strong>Technik</strong></p>
+<ul>
+<li>Tabelle <code>beweisChecklists</code>: projectId, anlass, checksState (JSON), notes, workspaceId</li>
+</ul>
+<hr>
+<h2>Sektion 4 — Verwaltung</h2>
+<p>Workspace-Konfiguration, Compliance-Verpflichtungen und Lizenzen.</p>
+<h3>4.1 Workspace ✓ Live · <code>/workspace</code></h3>
+<p><strong>Zweck:</strong> Zentrale Workspace-Konfiguration und Nutzerverwaltung.</p>
+<p><strong>Funktionen &amp; Features</strong></p>
+<ul>
+<li><strong>Nutzerverwaltung:</strong> Mitglieder mit Rollen (Admin, User), aktivem Status.</li>
+<li><strong>Rollen-Selektor</strong> auf Workspace-Ebene: <code>bauunternehmer | bauherr | ingenieurbuero</code> — bestimmt Sichtbarkeit IB-spezifischer Module (z. B. HOAI-Rechner) und Perspektive im Recht-Assistenten.</li>
+<li><strong>VOB-Einstellungen:</strong> bevorzugter externer Provider (juris, DIN Media, beck-online, alle).</li>
+<li><strong>HinSchG-Aktivierung:</strong> Flag <code>hinschgEnabled</code> schaltet das HinSchG-Modul ein, mit Eingabe einer dedizierten Hinweisgeber-E-Mail.</li>
+<li><strong>Geschäftsdaten:</strong> IBAN, BIC, Bankname, Steuer-Nr., USt-IdNr., Adresse, E-Mail, Telefon — werden in Vorlagen, Rechnungen und Briefkopf eingebettet.</li>
+</ul>
+<p><strong>Relevanz für Ingenieurbüros</strong>
+Die Workspace-Rolle ist die wichtigste Konfigurationsentscheidung: sie schaltet den HOAI-Rechner frei, justiert die Antworten des Recht-Assistenten und passt die Risiko-Bewertungen im Vertrags-Scan auf IB-Perspektive an. Geschäftsdaten als Single-Source-of-Truth verhindern Inkonsistenzen zwischen Honorarrechnungen, Aushängen und Anschreiben.</p>
+<p><strong>Technik</strong></p>
+<ul>
+<li>Tabelle <code>workspaces</code>: workspaceRole, vobPreferredExternalProvider, vobLicenseProvider, hinschgEnabled, hinschgOfficeContactEmail, iban, bic, bankName, taxId, vatId, address, email, phone</li>
+<li>Query: <code>getCurrentWorkspace()</code></li>
+</ul>
+<hr>
+<h3>4.2 Hinweisgebersystem (HinSchG) ✓ Live · <code>/hinschg</code> · admin-only · flag-pflichtig</h3>
+<blockquote>
+<p>Sichtbar nur, wenn <code>workspaces.hinschgEnabled = true</code> und User-Rolle <code>admin</code> ist.</p>
+</blockquote>
+<p><strong>Zweck:</strong> Hinweisgeberstelle nach §§ 12 ff. HinSchG (Hinweisgeberschutzgesetz).</p>
+<p><strong>Funktionen &amp; Features</strong></p>
+<ul>
+<li>Liste eingegangener Meldungen mit Status-Badges (Neu, In Prüfung, Abgeschlossen, Überfällig).</li>
+<li>Anonyme und namentliche Meldungen.</li>
+<li><strong>Pflicht-Fristen umgesetzt:</strong> Eingangsbestätigung 7 Tage, Rückmeldung an Hinweisgeber 3 Monate.</li>
+<li>Öffentliche Meldungs-URL (für externe Hinweisgeber zugänglich).</li>
+<li>Kategorisierung der Meldungen.</li>
+</ul>
+<p><strong>Relevanz für Ingenieurbüros</strong>
+Die Pflicht zum Hinweisgebersystem trifft Unternehmen ab 50 Mitarbeitern (§ 12 HinSchG). Größere IB fallen darunter. Die Plattform stellt sicher, dass die formalen Fristen — die bei Versäumnis bußgeldbewehrt sind — eingehalten werden. Für IB unter 50 MA bleibt das Modul deaktiviert (kein Konfigurations-Aufwand).</p>
+<p><strong>Technik</strong></p>
+<ul>
+<li>Tabelle <code>meldungen</code>: subject, category, isAnonymous, submittedAt, responseDeadline, ackAt, reporterDisplayName, status (neu|in_pruefung|abgeschlossen)</li>
+<li>Queries: <code>getMeldungen()</code>, <code>getMeldungenStats()</code></li>
+</ul>
+<hr>
+<h3>4.3 Lizenz-Center ✓ Live · <code>/lizenz</code> · Badge: PRO</h3>
+<p><strong>Zweck:</strong> Transparenz über Workspace-Tier, Nutzer-Lizenzen, Plattform-Lizenzen und Compliance-Logs.</p>
+<p><strong>Funktionen &amp; Features</strong></p>
+<ul>
+<li><strong>Workspace-Tier-Anzeige:</strong> Solo / Team / Business / Enterprise.</li>
+<li><strong>Nutzer-Lizenzen-Tracking:</strong> wie viele User-Slots vergeben, wie viele frei.</li>
+<li><strong>Plattform-Lizenz-Management:</strong> verwaltete Verträge mit DIN Media (VOB-Volltexte), juris, beck-online — mit Gültigkeitsdaten und Status.</li>
+<li><strong>Audit-Log-Zähler:</strong> wie oft wurde lizenzpflichtiger Content angezeigt (DIN-Media-Verträge verlangen typischerweise Audit-Logs).</li>
+<li><strong>Externe Konten:</strong> VOB-Provider, Anthropic-AVV, Hetzner-AVV — zentrale Übersicht aller Verträge mit Drittanbietern.</li>
+</ul>
+<p><strong>Relevanz für Ingenieurbüros</strong>
+Für IB im Tier 0 (Solo/Free) reicht das standardmäßige Fair-Use-Zitatrecht für VOB. Sobald ein Workspace eine DIN-Media-Lizenz erwirbt (Tier 1+), schaltet die Plattform automatisch auf Volltext-Anzeige der VOB um — über das Feld <code>licensedContent</code> in den <code>legalChunks</code>. Das Lizenz-Center macht Lizenz-Status und -Kosten transparent und liefert das Audit-Log, das für die DIN-Media-Vertragstreue erforderlich ist.</p>
+<p><strong>Technik</strong></p>
+<ul>
+<li>Tabellen: <code>workspaces</code> (tier, vobLicenseProvider), <code>users</code> (hasLicense, status), <code>licensedSources</code> (provider, product, validFrom, validUntil, status), <code>licensedAccessLog</code> (workspaceId)</li>
+</ul>
+<hr>
+<h2>HOAI-Leistungsphasen-Matrix</h2>
+<p>Verbindet die HOAI-Leistungsphasen mit den Modulen, die in der jeweiligen Phase besonders relevant sind:</p>
+<table>
+<thead>
+<tr>
+<th>LP</th>
+<th>Bezeichnung</th>
+<th>Primäre Module</th>
+<th>Sekundär</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>LP 1</strong></td>
+<td>Grundlagenermittlung</td>
+<td>HOAI-Rechner, Projekte</td>
+<td>Vertrags-Scan</td>
+</tr>
+<tr>
+<td><strong>LP 2</strong></td>
+<td>Vorplanung</td>
+<td>Projekte, Vorgänge</td>
+<td>Recht-Assistent</td>
+</tr>
+<tr>
+<td><strong>LP 3</strong></td>
+<td>Entwurfsplanung</td>
+<td>Projekte, Vorgänge</td>
+<td>Fristen</td>
+</tr>
+<tr>
+<td><strong>LP 4</strong></td>
+<td>Genehmigungsplanung</td>
+<td>Fristen, Vorgänge</td>
+<td>Recht-Assistent</td>
+</tr>
+<tr>
+<td><strong>LP 5</strong></td>
+<td>Ausführungsplanung</td>
+<td>Projekte, Vorgänge</td>
+<td>Bautagebuch (vorbereitend)</td>
+</tr>
+<tr>
+<td><strong>LP 6</strong></td>
+<td>Vorbereitung der Vergabe</td>
+<td>Vertrags-Scan, Vorlagen</td>
+<td>Projekte</td>
+</tr>
+<tr>
+<td><strong>LP 7</strong></td>
+<td>Mitwirkung bei der Vergabe</td>
+<td>Vertrags-Scan, Vorgänge</td>
+<td>Anordnungs-Check</td>
+</tr>
+<tr>
+<td><strong>LP 8</strong></td>
+<td><strong>Objektüberwachung</strong></td>
+<td><strong>Bautagebuch, Anzeigen, Anordnungs-Check, Beweissicherung, Rüge-Analyse, Stunden</strong></td>
+<td>Fristen, Vorgänge</td>
+</tr>
+<tr>
+<td><strong>LP 9</strong></td>
+<td>Objektbetreuung</td>
+<td>Rüge-Analyse, Fristen</td>
+<td>Recht-Assistent (Verjährungsfragen § 634a BGB)</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>Beobachtung:</strong> Die Modul-Dichte konzentriert sich auf <strong>LP 8 — Objektüberwachung</strong>, die haftungsintensivste Phase für IB. Das ist kein Zufall, sondern reflektiert die Plattform-Strategie: dort ansetzen, wo die rechtlichen Risiken und der operative Druck am höchsten sind.</p>
+</blockquote>
+<hr>
+<h2>Status-Gesamtübersicht</h2>
+<table>
+<thead>
+<tr>
+<th>Sektion</th>
+<th>✓ Live</th>
+<th>⚙ Teilweise</th>
+<th>⏳ Stub / Roadmap</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Arbeit</strong></td>
+<td>Dashboard, Vorgänge, Projekte, Bautagebuch, Fristen, Anzeigen, Stunden, Finanzen-Hub, Eingangsrechnungen, E-Rechnung-Import, Ausgangsrechnungen</td>
+<td>DATEV-Export, Liquiditätsplanung</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Quick-Actions</strong></td>
+<td>HOAI-Rechner, Vertrags-Scan, Anordnungs-Check</td>
+<td>Analysen-Hub</td>
+<td>Recht-Assistent (Mock-Modus, Phase 1), Rüge-Analyse (Heuristik)</td>
+</tr>
+<tr>
+<td><strong>Bibliothek</strong></td>
+<td>Gesetzestexte, Urteile</td>
+<td>—</td>
+<td>Vorlagen, Beweissicherung</td>
+</tr>
+<tr>
+<td><strong>Verwaltung</strong></td>
+<td>Workspace, HinSchG, Lizenz-Center</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody></table>
+<p><strong>Produktiv-Einsatz-Bewertung für Ingenieurbüros:</strong></p>
+<p>Die Plattform ist heute einsatzfähig für die Kern-Workflows eines IB:</p>
+<ul>
+<li>Projekt- und Fristenmanagement mit HOAI-Verankerung</li>
+<li>Vertrags- und Risikoanalyse (Vertrags-Scan, Anordnungs-Check live)</li>
+<li>VOB/B-Compliance bei Anzeigen</li>
+<li>Bauüberwachungs-Dokumentation (Bautagebuch live; Beweissicherung in Entwicklung)</li>
+<li>Honorarrechnungen mit XRechnung/ZUGFeRD</li>
+<li>HOAI-Honorarberechnung</li>
+</ul>
+<p><strong>In aktiver Entwicklung:</strong></p>
+<ul>
+<li>Recht-Assistent: Volltext-Anbindung an Claude-API mit RAG (Phase 1)</li>
+<li>Rüge-Analyse: Volltext-Parsing statt Heuristik (Phase 1)</li>
+<li>Vorlagen und Beweissicherung: UI-Vervollständigung</li>
+<li>DATEV-Export und Liquiditätsplanung: Eingabe-Interfaces</li>
+</ul>
+<hr>
+<h2>Quellen &amp; Code-Referenzen</h2>
+<table>
+<thead>
+<tr>
+<th>Aspekt</th>
+<th>Quelle</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Modul-Definitionen (Single Source of Truth)</td>
+<td><a href="../src/lib/modules.ts">src/lib/modules.ts</a></td>
+</tr>
+<tr>
+<td>Sidebar-Navigation</td>
+<td><a href="../src/lib/data.ts">src/lib/data.ts</a></td>
+</tr>
+<tr>
+<td>Datenbank-Schema</td>
+<td><a href="../src/db/schema/">src/db/schema/</a></td>
+</tr>
+<tr>
+<td>Routen-Implementierung</td>
+<td><a href="../src/app/">src/app/</a></td>
+</tr>
+<tr>
+<td>Workspace-Konfiguration</td>
+<td><a href="../src/db/schema/workspaces.ts">src/db/schema/workspaces.ts</a></td>
+</tr>
+<tr>
+<td>HOAI-Rechner</td>
+<td><a href="../src/app/hoai-rechner/">src/app/hoai-rechner/</a></td>
+</tr>
+<tr>
+<td>Roadmap &amp; Phasen</td>
+<td><a href="../README.md">README.md</a> — Abschnitt „Roadmap&quot;</td>
+</tr>
+<tr>
+<td>Use-Case-Analyse Ingenieurwesen</td>
+<td><a href="../Use_Case_Analyse_Ingenieurswesen.docx">Use_Case_Analyse_Ingenieurswesen.docx</a></td>
+</tr>
+<tr>
+<td>Marktanalyse DACH</td>
+<td><a href="../Marktanalyse_LexBau_DACH.docx">Marktanalyse_LexBau_DACH.docx</a></td>
+</tr>
+</tbody></table>
+<h3>Rechtshinweise</h3>
+<ul>
+<li><strong>RDG-Konformität:</strong> LexBau liefert Information, keine Rechtsberatung im Sinne des Rechtsdienstleistungsgesetzes. Bei wirtschaftlich relevanten Streitwerten ist die Rücksprache mit einem Rechtsanwalt empfohlen. Persistenter Banner unter <code>/recht-assistent</code>, <code>/ruege-analyse</code>, <code>/fristen</code> und auf eigener Seite <a href="../src/app/rdg-hinweis/"><code>/rdg-hinweis</code></a>.</li>
+<li><strong>VOB-Lizenzmodell:</strong> Tier 0 (Free/Solo) nutzt eigene Zusammenfassungen + Deep-Links zu juris/DIN Media/beck-online unter Berufung auf das Zitatrecht (§ 51 UrhG). Tier 1+ schaltet via DIN-Media-Plattformlizenz auf Volltext-Anzeige um. Audit-Logging vorbereitet.</li>
+<li><strong>Quellenrechte:</strong> BGB und HOAI sind amtliche Werke (§ 5 UrhG, gemeinfrei). VOB/B ist DIN-Norm — paraphrasierte Zusammenfassungen mit Deep-Links.</li>
+</ul>
+<hr>
+<p><em>Dokument-Stand: 2026-05-05 · Erstellt aus Code-Verifikation gegen den aktuellen Hauptzweig.</em></p>
+
+</body></html>

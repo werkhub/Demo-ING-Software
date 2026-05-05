@@ -1,0 +1,1244 @@
+{
+  "common": {
+    "actions": {
+      "save": "Speichern",
+      "cancel": "Abbrechen",
+      "edit": "Bearbeiten",
+      "delete": "Löschen",
+      "add": "Hinzufügen",
+      "create": "Erstellen",
+      "new": "Neu",
+      "back": "Zurück",
+      "confirm": "Bestätigen",
+      "ok": "OK",
+      "search": "Suchen",
+      "filter": "Filter",
+      "reset": "Zurücksetzen",
+      "send": "Senden",
+      "open": "Öffnen",
+      "close": "Schließen",
+      "upload": "Hochladen",
+      "download": "Herunterladen",
+      "more": "Mehr",
+      "loading": "Lädt …",
+      "saving": "Speichert …",
+      "view": "Ansicht",
+      "details": "Details"
+    },
+    "fields": {
+      "title": "Titel",
+      "name": "Name",
+      "description": "Beschreibung",
+      "notes": "Notizen",
+      "comment": "Kommentar",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "address": "Adresse",
+      "date": "Datum",
+      "deadline": "Frist",
+      "category": "Kategorie",
+      "status": "Status",
+      "type": "Typ",
+      "project": "Projekt",
+      "responsible": "Verantwortlich",
+      "action": "Aktion",
+      "actions": "Aktionen",
+      "message": "Nachricht",
+      "amount": "Betrag",
+      "createdAt": "Erstellt am",
+      "updatedAt": "Geändert am"
+    },
+    "status": {
+      "open": "Offen",
+      "inProgress": "In Bearbeitung",
+      "completed": "Erledigt",
+      "draft": "Entwurf",
+      "pending": "Ausstehend",
+      "archived": "Archiviert",
+      "critical": "Kritisch",
+      "active": "Aktiv",
+      "inactive": "Inaktiv"
+    },
+    "empty": {
+      "noResults": "Keine Ergebnisse",
+      "noEntries": "Keine Einträge",
+      "noProjects": "Keine Projekte"
+    },
+    "confirm": {
+      "delete": "Wirklich löschen?",
+      "discard": "Änderungen verwerfen?"
+    },
+    "urgency": {
+      "overdue": "{days} TAGE ÜBERFÄLLIG",
+      "today": "HEUTE",
+      "tomorrow": "MORGEN",
+      "inDays": "in {days} Tagen"
+    }
+  },
+  "nav": {
+    "sections": {
+      "uebersicht": "Übersicht",
+      "tagesgeschaeft": "Tagesgeschäft",
+      "projekte": "Projekte",
+      "finanzen": "Finanzen",
+      "personal": "Personal",
+      "dokumentation": "Dokumentation",
+      "werkzeuge": "Werkzeuge",
+      "wissen": "Wissen",
+      "verwaltung": "Verwaltung"
+    },
+    "items": {
+      "dashboard": "Dashboard",
+      "vorgaenge": "Vorgänge",
+      "projekte": "Projekte",
+      "bautagebuch": "Bautagebuch",
+      "fristen": "Fristen",
+      "anzeigen": "Anzeigen",
+      "rechnungen": "Eingangsrechnungen",
+      "ausgangsrechnungen": "Ausgangsrechnungen",
+      "stunden": "Stunden",
+      "datev": "DATEV-Export",
+      "liquiditaet": "Liquidität",
+      "finanzen": "Finanzen",
+      "erechnung-import": "E-Rechnung-Import",
+      "personal": "Personal",
+      "personal-zuordnung": "Projekt-Zuordnung",
+      "hoai-rechner": "HOAI-Rechner",
+      "vertrag": "Vertrags-Scan",
+      "ruege-analyse": "Rüge-Analyse",
+      "anordnung": "Anordnungs-Check",
+      "analysen": "Analysen",
+      "recht-assistent": "Recht-Assistent",
+      "gesetze": "Gesetzestexte",
+      "urteile": "Urteile",
+      "vorlagen": "Vorlagen",
+      "beweis": "Beweissicherung",
+      "workspace": "Workspace",
+      "hinschg": "Hinweise",
+      "nu": "NU-Pass-Through",
+      "lizenz": "Lizenz-Center"
+    }
+  },
+  "sidebar": {
+    "ariaLabel": "Hauptnavigation",
+    "closeAria": "Navigation schließen",
+    "tagline": "Risiko-OS für Bauprojekte",
+    "rdgHint": {
+      "label": "RDG-Hinweis:",
+      "text": "Information, keine Rechtsberatung."
+    }
+  },
+  "localeSwitcher": {
+    "label": "Sprache wechseln",
+    "options": {
+      "de": "Deutsch",
+      "en": "English"
+    }
+  },
+  "modules": {
+    "dashboard": {
+      "title": "Dashboard",
+      "greeting": {
+        "night": "Gute Nacht",
+        "morning": "Guten Morgen",
+        "day": "Guten Tag",
+        "evening": "Guten Abend"
+      },
+      "summary": {
+        "allClear": "Aktuell keine kritischen Fristen oder offenen Vorgänge.",
+        "prefix": "Du hast",
+        "middleAnd": "in den nächsten 14 Tagen und",
+        "criticalDeadlines": "{count, plural, one {# kritische Frist} other {# kritische Fristen}}",
+        "openCases": "{count, plural, one {# offenen Vorgang} other {# offene Vorgänge}}",
+        "highRiskTail": "— davon {n} mit hohem Risk-Score"
+      },
+      "cta": {
+        "newCase": "Neuen Vorgang anlegen",
+        "viewCases": "Vorgänge anzeigen",
+        "viewAll": "Alle ansehen",
+        "viewProjects": "Projektliste",
+        "viewDeadlines": "Alle"
+      },
+      "sections": {
+        "vorgaengeByStatus": "Vorgänge nach Status",
+        "projektRiskHeatmap": "Risiko-Heatmap Projekte",
+        "upcomingDeadlines": "Anstehende Fristen",
+        "recentActivities": "Letzte Aktivitäten",
+        "recentQueries": "Letzte Anfragen",
+        "quickAccess": "Schnellzugriff"
+      },
+      "labels": {
+        "workspaceWide": "Workspace-weit",
+        "frequentActions": "Häufige Aktionen",
+        "noQueriesYet": "Noch keine Anfragen. Stelle die erste über den Recht-Assistenten.",
+        "categoryFallback": "Allg."
+      },
+      "kpi": {
+        "activeProjects": {
+          "label": "Aktive Projekte",
+          "caption": "Workspace gesamt"
+        },
+        "openCases": {
+          "label": "Offene Vorgänge",
+          "caption": "End-to-End-Workflows"
+        },
+        "deadlines14": {
+          "label": "Fristen ≤ 14 Tage",
+          "captionCritical": "kritisch",
+          "captionCalm": "alles ruhig"
+        },
+        "highRisk": {
+          "label": "Hoher Risk-Score",
+          "captionPresent": "Vorgänge ≥ 60",
+          "captionAbsent": "keine kritischen"
+        }
+      },
+      "fristen": {
+        "emptyWindow": "Keine Fristen in den nächsten {days} Tagen.",
+        "viewLink": "ansehen"
+      },
+      "activities": {
+        "empty": "Noch keine Aktivität im Workspace.",
+        "kindLabels": {
+          "bautagebuch": "BTB",
+          "anfrage": "FRG",
+          "vorgang": "VOR",
+          "rechnung": "RCH",
+          "audit": "AUD"
+        }
+      },
+      "vorgaengeBoard": {
+        "columns": {
+          "offen": "Offen",
+          "in_bearbeitung": "In Bearbeitung",
+          "wartet_auf_anwalt": "Wartet auf Anwalt",
+          "abgeschlossen": "Abgeschlossen"
+        },
+        "moreCount": "+{count} weitere",
+        "dueLabel": "fällig {date}",
+        "categoryLabels": {
+          "maengelruege": "Mängelrüge",
+          "anlieferung": "Anlieferung",
+          "vertragspflicht": "Vertragspflicht",
+          "sonstiges": "Sonstiges"
+        }
+      },
+      "riskHeatmap": {
+        "empty": "Noch keine Projekte für eine Risiko-Bewertung.",
+        "columns": {
+          "project": "Projekt",
+          "frist": "Frist",
+          "vorgangstau": "Vorgangsstau",
+          "vertragsluecken": "Vertragslücken",
+          "maengel": "Mängel",
+          "overall": "Gesamt"
+        }
+      }
+    },
+    "vorgaenge": {
+      "title": "Vorgänge",
+      "subtitle": "Klärungs- und Aufgaben-Management",
+      "kicker": "Vorgänge · {count}",
+      "headline": "Akten-Übersicht",
+      "summary": "{open} offen · {highRisk} mit hohem Risk-Score · End-to-End-Workflow vom Eingang bis zum Versand.",
+      "newCase": "Neuer Vorgang",
+      "newCaseCta": "Neuen Vorgang anlegen",
+      "filter": {
+        "all": "Alle",
+        "byProject": "Nach Projekt",
+        "byCategory": "Nach Kategorie",
+        "byStatus": "Nach Status",
+        "byRisk": "Nach Risiko",
+        "search": "Suchen …"
+      },
+      "table": {
+        "title": "Titel",
+        "project": "Projekt",
+        "status": "Status",
+        "category": "Kategorie",
+        "risk": "Risk",
+        "assignee": "Zugewiesen",
+        "updated": "Aktualisiert"
+      },
+      "categories": {
+        "ruege": "Mängelrüge",
+        "anordnung": "Anordnung",
+        "behinderung": "Behinderung",
+        "bedenken": "Bedenken",
+        "klaerung": "Klärung",
+        "sonstiges": "Sonstiges"
+      },
+      "empty": "Keine Vorgänge gefunden.",
+      "create": {
+        "title": "Vorgang anlegen",
+        "save": "Anlegen",
+        "fromUpload": "Aus Datei erzeugen",
+        "backLink": "← Alle Vorgänge",
+        "headline": "Neuen Vorgang anlegen",
+        "intro": "Lade ein eingehendes Dokument hoch (Mängelrüge, Lieferschein, Anordnung, Vertragspflicht). LexBau klassifiziert es regelbasiert vor; Kategorie und Status kannst du nach der Anlage jederzeit anpassen."
+      }
+    },
+    "projekte": {
+      "title": "Projekte",
+      "subtitle": "Bauvorhaben verwalten",
+      "newProject": "Neues Projekt",
+      "view": {
+        "cards": "Karten",
+        "table": "Tabelle"
+      },
+      "filter": {
+        "search": "Projekt suchen …",
+        "status": "Status",
+        "withRisks": "Mit Risiken",
+        "withChanges": "Mit Nachträgen"
+      },
+      "table": {
+        "identifier": "Kennung",
+        "name": "Bezeichnung",
+        "client": "Auftraggeber",
+        "value": "Auftragswert",
+        "phase": "Phase",
+        "status": "Status",
+        "risks": "Risiken",
+        "changes": "Nachträge"
+      },
+      "phases": {
+        "lp1": "LP 1 — Grundlagenermittlung",
+        "lp2": "LP 2 — Vorplanung",
+        "lp3": "LP 3 — Entwurfsplanung",
+        "lp4": "LP 4 — Genehmigungsplanung",
+        "lp5": "LP 5 — Ausführungsplanung",
+        "lp6": "LP 6 — Vorbereitung Vergabe",
+        "lp7": "LP 7 — Mitwirkung Vergabe",
+        "lp8": "LP 8 — Objektüberwachung",
+        "lp9": "LP 9 — Objektbetreuung"
+      },
+      "create": {
+        "title": "Neues Projekt anlegen",
+        "fields": {
+          "identifier": "Projekt-Kennung",
+          "name": "Bezeichnung",
+          "client": "Auftraggeber",
+          "address": "Baustellenadresse",
+          "contractDate": "Vertragsdatum",
+          "value": "Auftragswert (netto)"
+        },
+        "submit": "Projekt anlegen"
+      },
+      "empty": "Noch keine Projekte angelegt."
+    },
+    "fristen": {
+      "title": "Fristen",
+      "subtitle": "Zentrale Fristenübersicht",
+      "kicker": "Aktive Fristen",
+      "intro": "Sortiert nach Dringlichkeit · live aus der Datenbank",
+      "icalTitle": "Fristen + Termine als iCal-Datei für Outlook/Apple/Google Calendar",
+      "newDeadline": "Neue Frist",
+      "newSection": "Neue Frist anlegen",
+      "groups": {
+        "critical": "Kritisch (≤ 1 Tag)",
+        "thisWeek": "Diese Woche",
+        "open": "Offen",
+        "completed": "Erledigt",
+        "todayTomorrow": "Heute / Morgen",
+        "totalOpen": "Offen gesamt",
+        "doneCount": "Erledigt · {count}"
+      },
+      "table": {
+        "task": "Aufgabe",
+        "deadline": "Frist",
+        "project": "Projekt",
+        "legalBasis": "Rechtsgrundlage",
+        "daysLeft": "Resttage"
+      },
+      "actions": {
+        "complete": "Erledigen",
+        "reopen": "Wieder öffnen",
+        "exportIcal": "iCal-Export",
+        "deleteAria": "Frist löschen",
+        "doneShort": "✓ erledigt"
+      },
+      "form": {
+        "templatesLabel": "Schnell-Vorlagen (Frist + Basis automatisch)",
+        "taskLabel": "Aufgabe / Frist-Beschreibung",
+        "taskPlaceholder": "z. B. Mängelrüge beantworten — BV-2026-001",
+        "deadlineLabel": "Stichtag",
+        "projectLabel": "Projekt",
+        "noProject": "— Kein Projekt —",
+        "legalBasisLabel": "Rechtliche Basis (optional)",
+        "legalBasisPlaceholder": "z. B. \"§ 13 Abs. 5 VOB/B\"",
+        "hint": "Kategorie + Dringlichkeit werden aus dem Datum berechnet",
+        "submit": "Frist anlegen",
+        "submitting": "Speichere …",
+        "createdToast": "Frist angelegt"
+      },
+      "projectFallback": {
+        "none": "Kein Projekt",
+        "unknown": "Unbekanntes Projekt"
+      },
+      "empty": "Keine offenen Fristen."
+    },
+    "bautagebuch": {
+      "title": "Bautagebuch",
+      "subtitle": "Tagesweise Bauablauf-Dokumentation",
+      "kicker": "Co-Pilot · Live aus DB",
+      "intro": "Jeder Eintrag wird automatisch klassifiziert und flaggt rechtlich relevante Auslöser — Anordnungen, Behinderungen, Bedenken, Mängelrügen, Zahlungsverzug.",
+      "stats": {
+        "total": "Einträge gesamt",
+        "withTrigger": "Mit Trigger",
+        "critical": "Kritisch"
+      },
+      "newEntrySection": "Neuer Eintrag",
+      "newEntry": "Neuer Eintrag",
+      "form": {
+        "project": "Projekt",
+        "date": "Datum",
+        "weather": "Wetter",
+        "temperature": "Temperatur",
+        "hoursOwn": "Eigene Stunden",
+        "hoursSubcontractor": "NU-Stunden",
+        "equipment": "Eingesetzte Geräte",
+        "text": "Tagesgeschehen",
+        "submit": "Eintrag speichern"
+      },
+      "weather": {
+        "sunny": "Sonnig",
+        "cloudy": "Bewölkt",
+        "rain": "Regen",
+        "snow": "Schnee",
+        "frost": "Frost",
+        "storm": "Sturm"
+      },
+      "trigger": {
+        "anordnung": "Anordnung erkannt",
+        "behinderung": "Behinderung erkannt",
+        "bedenken": "Bedenken erkannt",
+        "ruege": "Mangelrüge erkannt",
+        "zahlungsverzug": "Zahlungsverzug erkannt"
+      },
+      "empty": "Noch keine Bautagebuch-Einträge."
+    },
+    "anzeigen": {
+      "title": "Anzeigen",
+      "subtitle": "Behinderungs- und Bedenken-Anzeigen nach VOB/B",
+      "kicker": "Compliance-Pflichten · § 6 / § 4 VOB/B",
+      "intro": "Behinderungsanzeigen (§ 6 Abs. 1 VOB/B) und Bedenkenanmeldungen (§ 4 Abs. 3 VOB/B) — formell nachweisbar, mit Versand-Workflow, Zugangs-Tracking und Eskalation bei ausbleibender Bestätigung.",
+      "newNotice": "Neue Anzeige",
+      "kind": {
+        "behinderung": "Behinderungsanzeige (§ 6 VOB/B)",
+        "bedenken": "Bedenkenanmeldung (§ 4 Abs. 3 VOB/B)"
+      },
+      "status": {
+        "draft": "Entwurf",
+        "sent": "Versendet",
+        "acknowledged": "Zugang bestätigt",
+        "overdue": "Überfällig"
+      },
+      "stats": {
+        "total": "Anzeigen gesamt",
+        "drafts": "Entwürfe",
+        "sentWaiting": "Versendet · wartend",
+        "ackOverdue": "Zugang überfällig"
+      },
+      "emptyNoProjects": "Lege zuerst ein Projekt an — Anzeigen werden projektbezogen erfasst.",
+      "emptyHint": "Tipp: Aus einem Bautagebuch-Eintrag der Kategorie „Behinderung\" oder „Bedenken\" kann eine Anzeige direkt erzeugt werden.",
+      "sentOn": "versendet {date}",
+      "acknowledgedOn": "bestätigt {date}",
+      "legalNoticesHeading": "Rechtshinweise",
+      "form": {
+        "project": "Projekt",
+        "subject": "Betreff",
+        "matter": "Sachverhalt",
+        "submit": "Anzeige speichern"
+      },
+      "empty": "Noch keine Anzeigen."
+    },
+    "stunden": {
+      "title": "Stunden",
+      "subtitle": "Wochenweise Personal-Stundenerfassung",
+      "kicker": "Arbeit · Personal-Stunden",
+      "weekTitle": "Stunden — KW {kw} / {jahr}",
+      "intro": "Tagesweise Erfassung Personal-Stunden. Wochen-Lock sperrt Mutation nach Lohnlauf. Plausi-Check >12h/Tag erzeugt Auto-Vorgang.",
+      "weekLockedToast": "KW {kw}/{jahr} wurde gesperrt.",
+      "navTodayWeek": "Heute (KW {kw}/{jahr})",
+      "captureBtn": "+ Stunden erfassen",
+      "employeesBtn": "Mitarbeiter",
+      "stats": {
+        "activeEmployees": "Aktive MA",
+        "bookings": "Buchungen",
+        "hoursTotal": "Stunden-Summe",
+        "wageTotal": "Lohn-Summe"
+      },
+      "lockState": {
+        "lockedTitle": "KW gesperrt",
+        "lockedDetails": "am {date} durch {by}.",
+        "lockedNote": "Notiz: {note}",
+        "openLabel": "KW offen — Mutation möglich. Sperre nach Lohnlauf."
+      },
+      "noEmployees": "Keine aktiven Mitarbeiter angelegt.",
+      "createFirstEmployee": "+ Ersten Mitarbeiter anlegen",
+      "tableHeaders": {
+        "employee": "Mitarbeiter",
+        "hoursTotal": "Σ Std"
+      },
+      "weekNav": {
+        "previous": "Vorherige Woche",
+        "next": "Nächste Woche",
+        "current": "Aktuelle Woche"
+      },
+      "lock": {
+        "locked": "Gesperrt",
+        "lockButton": "Woche sperren",
+        "unlockButton": "Sperre aufheben",
+        "lockedBy": "Gesperrt von",
+        "lockedAt": "Gesperrt am"
+      },
+      "table": {
+        "employee": "Mitarbeiter",
+        "trade": "Gewerk",
+        "monday": "Mo",
+        "tuesday": "Di",
+        "wednesday": "Mi",
+        "thursday": "Do",
+        "friday": "Fr",
+        "saturday": "Sa",
+        "sunday": "So",
+        "total": "Summe"
+      },
+      "warning": {
+        "over12h": "Mehr als 12 Std. an einem Tag — Plausi-Vorgang erstellt."
+      },
+      "empty": "Keine Stunden in dieser Woche erfasst."
+    },
+    "personal": {
+      "title": "Personal",
+      "kicker": "Mitarbeiter · Tools · Zuordnungen",
+      "intro": "Bündel aller Mitarbeiter-bezogenen Werkzeuge: Stunden­erfassung, Stamm­daten, Projekt-Zuordnung. Weitere Module (Urlaub, Schulung, Lohn) folgen.",
+      "badge": {
+        "demo": "Demo"
+      },
+      "hub": {
+        "stunden": {
+          "title": "Stunden",
+          "desc": "Tagesweise Personal-Stunden je MA × Projekt. Wochen-Lock nach Lohnlauf, Plausi-Check >12 h/Tag.",
+          "primaryLabel": "Aktive MA",
+          "secondary": "Wochen-Erfassung mit Lock"
+        },
+        "mitarbeiter": {
+          "title": "Mitarbeiter",
+          "desc": "Stamm­daten: Name, Personalnummer, Lohnart, Stunden­satz, Kostenstelle, Gewerk.",
+          "primaryLabel": "Datensätze",
+          "secondary": "{aktiv} aktiv · {inaktiv} inaktiv"
+        },
+        "zuordnung": {
+          "title": "Projekt-Zuordnung",
+          "desc": "Plan-Zuordnung MA → Projekt mit Rolle, Zeitraum und Allokationsanteil. Ergänzt die tagesgenaue Stunden-Buchung.",
+          "primaryLabel": "Zuordnungen",
+          "secondary": "Stamm-/Plandaten"
+        },
+        "urlaub": {
+          "title": "Urlaub & Abwesenheit",
+          "desc": "Urlaubs­anträge, Krank­meldungen, Frei­stellungen — Saldo pro MA, Genehmigungs­workflow.",
+          "primaryLabel": "Tage offen",
+          "secondary": "Demo-Maske · noch keine Daten"
+        },
+        "schulung": {
+          "title": "Schulungen & Qualifikation",
+          "desc": "Sicherheits­unterweisungen, Sach­kunde, Zertifikate mit Ablauf­datum und Erinnerung.",
+          "primaryLabel": "Nachweise",
+          "secondary": "Demo-Maske · noch keine Daten"
+        },
+        "lohn": {
+          "title": "Lohn-Vorbereitung",
+          "desc": "Aufbereitung der Wochen-Stunden für Lohn­büro / DATEV-Lohn. Pro MA × Lohnart × KW.",
+          "primaryLabel": "Bereit",
+          "secondary": "Demo-Maske · folgt"
+        }
+      },
+      "zuordnung": {
+        "title": "Projekt-Zuordnung",
+        "kicker": "Personal · Mitarbeiter ↔ Projekt",
+        "intro": "Stamm-/Planbasis: welcher Mitarbeiter ist auf welchem Projekt eingesetzt, in welcher Rolle, mit welcher Allokation. Ergänzt die tagesgenaue Stunden-Buchung.",
+        "backToHub": "Zurück zu Personal",
+        "manageEmployees": "Mitarbeiter verwalten",
+        "manageProjects": "Projekte verwalten",
+        "toastCreated": "Zuordnung angelegt.",
+        "toastDeleted": "Zuordnung gelöscht.",
+        "form": {
+          "title": "Neue Zuordnung",
+          "requirementsHint": "Es müssen mindestens ein aktiver Mitarbeiter und ein Projekt existieren, bevor eine Zuordnung angelegt werden kann.",
+          "fields": {
+            "mitarbeiter": "Mitarbeiter",
+            "projekt": "Projekt",
+            "rolle": "Rolle",
+            "allokation": "Allokation (0–1)",
+            "startDatum": "Start",
+            "endDatum": "Ende",
+            "notes": "Notiz"
+          },
+          "placeholders": {
+            "rolle": "z. B. Polier, Bauleiter, Tragwerksplaner",
+            "notes": "optional"
+          },
+          "submit": "Zuordnung anlegen"
+        },
+        "list": {
+          "title": "Zuordnungen ({n})",
+          "empty": "Noch keine Zuordnungen angelegt.",
+          "delete": "Löschen",
+          "headers": {
+            "mitarbeiter": "Mitarbeiter",
+            "projekt": "Projekt",
+            "rolle": "Rolle",
+            "allokation": "Allok.",
+            "zeitraum": "Zeitraum"
+          }
+        }
+      }
+    },
+    "finanzen": {
+      "title": "Finanzen",
+      "subtitle": "Rechnungen, Buchhaltung, Liquidität",
+      "kicker": "Buchhaltung · Cashflow · Schnittstellen",
+      "intro": "Eingangs- und Ausgangsrechnungen, E-Rechnungs-Import, DATEV-Export und Liquiditätsplanung — alle Finanz-Workflows an einem Ort.",
+      "hub": {
+        "incoming": {
+          "title": "Eingangsrechnungen",
+          "desc": "Rechnungs-Anomalie-POC: Plausibilität, Preissprünge, Doppelbuchungen, Vertragsabgleich.",
+          "primaryLabel": "Rechnungen",
+          "secondary": "{anomalies} Anomalie-Befunde · {xml} E-Rechnungen",
+          "badgeRisk": "{n} Risk"
+        },
+        "import": {
+          "title": "E-Rechnung-Import",
+          "desc": "XRechnung, ZUGFeRD, Factur-X importieren. PDF- oder XML-Datei hochladen, Validierung läuft automatisch.",
+          "primary": "XML / PDF",
+          "primaryLabel": "Upload-Formate",
+          "secondary": "{n} bisher importiert"
+        },
+        "outgoing": {
+          "title": "Ausgangsrechnungen",
+          "desc": "Abschlags- und Schlussrechnungen mit Mahnungs-Tracking. § 13b-Reverse-Charge automatisch erkannt.",
+          "primaryLabel": "Offen brutto",
+          "secondary": "{open} offen · {paid} bezahlt · {drafts} Entwürfe",
+          "badgeReminder": "{n} Mahnung"
+        },
+        "datev": {
+          "title": "DATEV-Export",
+          "desc": "Buchungsstapel-CSV nach DATEV-EXTF-Spezifikation. Verkauf, Eingang-NU, Lohn — getrennt exportierbar.",
+          "primaryLabelLast": "Letzter Export",
+          "primaryLabelNone": "Noch kein Export",
+          "secondary": "{n} Exporte (letzte 5)"
+        },
+        "liquidity": {
+          "title": "Liquiditätsplanung",
+          "desc": "Cashflow-Forecast aus offenen ARs, NU-Eingangsrechnungen, Lohn. Frühwarnung bei Saldo ≤ 0 in 14 Tagen.",
+          "primaryLabel": "Szenarien",
+          "lastUpdate": "Zuletzt: {date}"
+        },
+        "bauabzug": {
+          "title": "Bauabzug · § 48a EStG",
+          "desc": "Quartalsmeldung der einbehaltenen 15 % Bauabzugsteuer beim Finanzamt. Aggregation pro Quartal + CSV-Vorlage für Mein-ELSTER.",
+          "primaryLabel": "offen anzumelden",
+          "openCount": "{n} Rg ohne Anmeldung",
+          "allPaid": "alles abgeführt",
+          "badgeOpen": "{n} offen"
+        }
+      },
+      "cards": {
+        "incoming": {
+          "title": "Eingangsrechnungen",
+          "openCount": "{count} offen",
+          "anomalies": "{count} Anomalien"
+        },
+        "erechnungImport": {
+          "title": "E-Rechnung-Import",
+          "description": "XRechnung / ZUGFeRD"
+        },
+        "outgoing": {
+          "title": "Ausgangsrechnungen",
+          "openClaims": "{count} offene Forderungen",
+          "dueReminders": "{count} fällige Mahnungen"
+        },
+        "datev": {
+          "title": "DATEV-Export",
+          "lastExport": "Letzter Export: {date}",
+          "neverExported": "Noch nie exportiert"
+        },
+        "liquidity": {
+          "title": "Liquiditätsplanung",
+          "scenarios": "{count} Szenarien",
+          "lastUpdate": "Aktualisiert: {date}"
+        }
+      }
+    },
+    "rechnungen": {
+      "title": "Eingangsrechnungen",
+      "subtitle": "Rechnungs-Anomalien und Vertragsabgleich",
+      "kicker": "Eingangsrechnungen · {count}",
+      "headline": "Rechnungs-Anomalie-POC",
+      "summary": "{anomalies} Anomalie-Befunde · {highRisk} mit Score ≥ 60 · {xml} E-Rechnungen",
+      "summaryInvalid": ", {n} ungültig",
+      "summaryWarnings": ", {n} mit Warnungen",
+      "uploadXml": "+ E-Rechnung (XML)",
+      "addPdf": "+ PDF/Anomalie-Check",
+      "upload": "E-Rechnung hochladen",
+      "table": {
+        "vendor": "Lieferant",
+        "invoiceNumber": "Rechnungs-Nr.",
+        "amount": "Betrag",
+        "invoiceDate": "Rechnungsdatum",
+        "anomalies": "Anomalien",
+        "format": "Format",
+        "status": "Status"
+      },
+      "anomalyType": {
+        "duplicate": "Doppelbuchung",
+        "priceJump": "Preissprung",
+        "noContract": "Ohne Vertrag",
+        "implausible": "Unplausibel"
+      },
+      "empty": "Keine Eingangsrechnungen."
+    },
+    "ausgangsrechnungen": {
+      "title": "Ausgangsrechnungen",
+      "subtitle": "Abschlags- und Schlussrechnungen",
+      "kicker": "Forderungen · § 16 VOB/B · § 14 UStG",
+      "intro": "Abschlags- und Schlussrechnungen über alle Projekte. Rechnungsnummern sind workspace-weit fortlaufend und unveränderbar (Steuerrecht). Erstellung erfolgt im jeweiligen Projekt.",
+      "statsTotal": "Gesamt",
+      "statsDrafts": "Entwürfe",
+      "statsOpen": "Offene Forderungen",
+      "statsOpenCaption": "{n} Rechnungen offen",
+      "statsReminders": "Mahnungen / gerichtlich",
+      "emptyTitle": "Noch keine Ausgangsrechnungen erstellt.",
+      "emptyHint": "Rechnungen werden im Projekt erstellt. Wähle ein Projekt aus und nutze dort „→ Ausgangsrechnungen\".",
+      "createFirst": "+ Erste Rechnung im Projekt {identifier}",
+      "noSubject": "(ohne Betreff)",
+      "projectRemoved": "Projekt entfernt",
+      "due": "fällig {date}",
+      "sentAgo": "versendet {ago}",
+      "openLabel": "offen {amount}",
+      "overdueDays": "{days} T überfällig",
+      "paidLabel": "bezahlt",
+      "newInvoice": "Neue Rechnung",
+      "kind": {
+        "abschlag": "Abschlag",
+        "schluss": "Schluss"
+      },
+      "stats": {
+        "drafts": "Entwürfe",
+        "openClaims": "Offene Forderungen",
+        "dueReminders": "Fällige Mahnungen",
+        "overdueDays": "Verzugstage"
+      },
+      "table": {
+        "number": "Nr.",
+        "invoiceDate": "Datum",
+        "dueDate": "Fällig",
+        "kind": "Typ",
+        "amount": "Betrag",
+        "paid": "Bezahlt",
+        "status": "Status"
+      },
+      "badges": {
+        "xrechnung": "XRechnung",
+        "zugferd": "ZUGFeRD",
+        "reverseCharge": "§ 13b RC"
+      },
+      "empty": "Noch keine Ausgangsrechnungen."
+    },
+    "eingangsrechnungenUpload": {
+      "title": "E-Rechnung-Import",
+      "subtitle": "XRechnung (UBL/CII) oder ZUGFeRD",
+      "dropzone": {
+        "label": "Datei hierher ziehen oder klicken",
+        "hint": "Max. 5 MB · XML"
+      },
+      "submit": "Importieren",
+      "errors": {
+        "tooLarge": "Datei zu groß (max. 5 MB).",
+        "wrongFormat": "Nur XML-Dateien erlaubt.",
+        "invalid": "XML konnte nicht geparst werden."
+      },
+      "success": "Rechnung importiert."
+    },
+    "datev": {
+      "title": "DATEV-Export",
+      "subtitle": "Buchungsstapel im EXTF-Format",
+      "form": {
+        "from": "Von",
+        "to": "Bis",
+        "submit": "Export erzeugen"
+      },
+      "history": "Letzte Exporte"
+    },
+    "liquiditaet": {
+      "title": "Liquiditätsplanung",
+      "subtitle": "Cashflow-Forecast mit Frühwarnung",
+      "warning": "Frühwarnung: Saldo droht in 14 Tagen unter 0 zu fallen.",
+      "scenarios": "Szenarien"
+    },
+    "hoaiRechner": {
+      "title": "HOAI-Honorarrechner",
+      "subtitle": "Honorarberechnung nach HOAI 2021",
+      "kicker": "Quick-Action · HOAI 2021",
+      "intro": "Honorarberechnung nach HOAI 2021 für Gebäudeplanung (§ 35), Ingenieurbauwerke (§ 47), Tragwerksplanung (§ 51) und Technische Ausrüstung (§ 56). Lineare Interpolation zwischen den Honorartafel-Stützstellen — für Projekt-Kalkulation, nicht für gerichtliche Honorarberechnung.",
+      "tipBefore": "Tipp: Wenn das Projekt schon im System ist, kannst du die HOAI-Werte direkt am Projekt hinterlegen (",
+      "tipLink": "Projekte",
+      "tipAfter": ") — die Honorarsumme wird dann automatisch in der Projekt-Liste sichtbar.",
+      "form": {
+        "leistungsbild": "Leistungsbild",
+        "honorarzone": "Honorarzone",
+        "anrechenbareCosts": "Anrechenbare Kosten (netto)",
+        "leistungsphasen": "Leistungsphasen",
+        "calculate": "Berechnen"
+      },
+      "leistungsbilder": {
+        "p35": "§ 35 — Gebäudeplanung",
+        "p47": "§ 47 — Ingenieurbauwerke",
+        "p51": "§ 51 — Tragwerksplanung",
+        "p56": "§ 56 — Technische Ausrüstung"
+      },
+      "result": {
+        "honorar": "Honorar (netto)",
+        "honorarBrutto": "Honorar (brutto)",
+        "perPhase": "Pro Leistungsphase"
+      },
+      "hint": "HOAI-Werte können direkt am Projekt hinterlegt werden."
+    },
+    "rechtAssistent": {
+      "title": "Recht-Assistent",
+      "subtitle": "Baurechtliche Fragen mit Norm-Bezug",
+      "kicker": "KI-Werkzeug · Mock-Antworten",
+      "demoBadge": "Demo",
+      "intro": "Beschreibe deinen Fall in Alltagssprache — Standardfälle liefern direkt Norm, Pro/Contra und Handlungsschritte mit Quellenverweis. Eigene Anfragen werden in der Datenbank gespeichert und kategorisiert.",
+      "perspectiveLabel": "Perspektive · {short} · {label}",
+      "switchRoleHintBefore": "Wechsle die Rolle in den ",
+      "switchRoleLink": "Workspace-Einstellungen",
+      "switchRoleHintAfter": ".",
+      "noticeKicker": "Hinweis",
+      "noticeBody": "Standardfall-Antworten liegen kuratiert vor. Freitext-Anfragen werden derzeit kategorisiert + gespeichert; die Claude-API-Anbindung mit RAG-Grounding (VOB/BGB/HOAI/Urteile) folgt in Phase 1.",
+      "form": {
+        "question": "Deine Frage",
+        "context": "Projekt-Kontext (optional)",
+        "submit": "Anfrage senden"
+      },
+      "response": {
+        "sources": "Quellen",
+        "actions": "Empfohlene Handlungen",
+        "pros": "Pro",
+        "cons": "Contra"
+      },
+      "history": "Letzte Anfragen",
+      "empty": "Noch keine Anfragen.",
+      "demoBanner": "Demo-Modus: Antworten aus Mock-Szenarien. Live-KI folgt in Phase 1."
+    },
+    "analysen": {
+      "title": "Analysen",
+      "subtitle": "Vertrags-, Rüge- und Anordnungs-Analyse",
+      "kicker": "KI-Werkzeuge · Pro",
+      "intro": "Dokument-getriebene Werkzeuge: Vertrag scannen, Rüge bewerten, Anordnung prüfen — alle drei nach demselben Muster (Eingabe → Analyse → Ergebnis mit Norm-Bezug).",
+      "hub": {
+        "vertrag": {
+          "title": "Vertrags-Scan",
+          "desc": "Risiko-Scan vor Unterschrift: AGB-Klauseln, Vertragsstrafe, Sicherheiten, Abnahme-Regelungen, ungewöhnliche Mengen-Klauseln.",
+          "primaryLabel": "Erfasste Verträge",
+          "secondary": "{high} High · {medium} Medium-Befunde",
+          "noFindings": "Noch keine Befunde"
+        },
+        "ruege": {
+          "title": "Rüge-Analyse",
+          "desc": "Eingehende Mängelrüge prüfen: formelle Wirksamkeit (Bezeichnung, Frist, Form), materielle Berechtigung, Antwort-Vorschlag.",
+          "primary": "Live",
+          "primaryLabel": "Heuristik aktiv",
+          "secondary": "Volltext-Analyse mit RAG folgt in Phase 1"
+        },
+        "anordnung": {
+          "title": "Anordnungs-Check",
+          "desc": "WhatsApp-/E-Mail-Text einer Anordnung einfügen — Klassifikation als § 1 III/IV VOB/B, Form-Check, Empfehlung für Bauleitung.",
+          "primary": "Live",
+          "primaryLabel": "Klassifikation aktiv",
+          "secondary": "Anordnung beweissicher dokumentieren"
+        },
+        "badgeHigh": "{n} High",
+        "badgeMedium": "{n} Medium"
+      },
+      "stats": {
+        "contracts": "Erfasste Verträge",
+        "highRisk": "High-Risk-Befunde",
+        "mediumRisk": "Medium-Risk-Befunde"
+      },
+      "tools": {
+        "vertrag": "Vertrags-Scan",
+        "ruege": "Rüge-Analyse",
+        "anordnung": "Anordnungs-Check"
+      }
+    },
+    "vertrag": {
+      "title": "Vertrags-Scan",
+      "subtitle": "Risiko-Klauseln automatisch erkennen",
+      "kicker": "KI-Werkzeug · Pro",
+      "intro": "Vertragstext einfügen — automatischer Scan auf typische Risiko-Klauseln: Vertragsstrafe-Höhen, Sicherheitseinbehalt, Zahlungsfristen, AGB-Konflikte, fehlende Vorbehalte. Findings je Vertrag mit Belegstelle und Rechtsbasis gespeichert.",
+      "stats": {
+        "contracts": "Erfasste Verträge",
+        "high": "High-Risk Findings",
+        "medium": "Medium-Risk Findings"
+      },
+      "newSection": "Neuen Vertrag scannen",
+      "noProjects": "Lege zuerst ein Projekt an — Verträge werden projektbezogen erfasst.",
+      "listSection": "Erfasste Verträge · {count}",
+      "noContractsYet": "Noch kein Vertrag erfasst.",
+      "upload": "Vertrag hochladen",
+      "rescan": "Neu scannen",
+      "findings": {
+        "title": "Befunde",
+        "risk": "Risiko",
+        "clause": "Klausel",
+        "basis": "Rechtsgrundlage",
+        "high": "Hoch",
+        "medium": "Mittel",
+        "low": "Niedrig"
+      },
+      "actions": {
+        "createCase": "Vorgang erzeugen",
+        "delete": "Vertrag löschen"
+      },
+      "empty": "Noch keine Verträge erfasst."
+    },
+    "ruegeAnalyse": {
+      "title": "Rüge-Analyse",
+      "subtitle": "Eingehende Mängelrüge prüfen",
+      "kicker": "KI-Werkzeug · Pro",
+      "intro": "Eingehende Mängelrüge oder Forderung des AG einfügen — Tool prüft formelle Wirksamkeit (Mangel-Bezeichnung, Frist, Schriftform), bewertet die materielle Berechtigung und schlägt eine fertige Antwort vor.",
+      "statusKicker": "Status",
+      "statusBody": "Heuristik-Analyse clientseitig (Frist-Erkennung, Schlüsselwort-Match). Volltext-Analyse mit Claude-API + RAG auf VOB/BGB/Urteilen folgt in Phase 1.",
+      "form": {
+        "text": "Rüge-Text einfügen",
+        "submit": "Analysieren"
+      },
+      "result": {
+        "formal": "Formelle Wirksamkeit",
+        "material": "Materielle Berechtigung",
+        "suggestion": "Antwortvorschlag"
+      },
+      "checks": {
+        "specific": "Mangel konkret bezeichnet",
+        "deadline": "Frist gesetzt",
+        "writtenForm": "Schriftform gewahrt"
+      }
+    },
+    "anordnung": {
+      "title": "Anordnungs-Check",
+      "subtitle": "AG-Kommunikation auf VOB/B § 1 Abs. 3/4 prüfen",
+      "kicker": "KI-Werkzeug · Pro",
+      "intro": "Eingehende AG-Kommunikation (E-Mail, WhatsApp, Brief) einfügen — das Tool prüft, ob es sich um eine verbindliche Anordnung i.S.d. § 2 Abs. 5 VOB/B handelt und welche Schritte daraus folgen. Ohne Mehrkosten-Ankündigung VOR Ausführung droht Anspruchsverlust (BGH VII ZR 201/18).",
+      "inputKicker": "Eingangstext",
+      "inputPlaceholder": "E-Mail / WhatsApp / Brief des AG hier einfügen…",
+      "loadSample": "Beispiel laden",
+      "clear": "Leeren",
+      "minCharsHint": "Mindestens 20 Zeichen einfügen — die Analyse läuft live.",
+      "ratingKicker": "Bewertung",
+      "scoreLabel": "Score {score}/100",
+      "checksKicker": "Checks",
+      "recommendationsKicker": "Handlungsempfehlungen ({count})",
+      "risksKicker": "Risiken",
+      "deadlineDays": "binnen {days} {days, plural, one {Tag} other {Tagen}}",
+      "rdgFooter": "Information, keine Rechtsberatung i.S.d. RDG. Die Analyse beruht auf Stichwort-Heuristik und ersetzt keine anwaltliche Würdigung.",
+      "badgeChanged": "Geänderte Leistung",
+      "badgeAdditional": "Zusätzliche Leistung",
+      "level": {
+        "ja": "Ja — Anordnung erkennbar",
+        "wahrscheinlich": "Wahrscheinlich Anordnung",
+        "fraglich": "Fraglich",
+        "nein": "Eher Anregung, keine Anordnung"
+      },
+      "form": {
+        "text": "E-Mail / WhatsApp / Brief einfügen",
+        "submit": "Prüfen"
+      },
+      "result": {
+        "score": "Score",
+        "classification": "Klassifikation",
+        "recommendations": "Empfehlungen",
+        "deadline": "Empfohlene Frist",
+        "warning": "Risiko: verdeckte Anordnung ohne Mehrkosten-Vorbehalt."
+      }
+    },
+    "gesetze": {
+      "title": "Gesetzestexte",
+      "subtitle": "BGB, HOAI 2021, VOB/A/B/C",
+      "kicker": "Referenz · Rechtsquellen",
+      "intro": "BGB-Bauvertragsrecht, HOAI 2021 und VOB Teile A/B/C — paragraphenbasiert, durchsuchbar, mit Quellenangabe.",
+      "searchLabel": "Suche",
+      "searchPlaceholder": "z. B. „Vertragsstrafe“, „§ 650b“, „Behinderung“ …",
+      "searchSubmit": "Suchen",
+      "openCard": "Öffnen →",
+      "vobNoticeKicker": "Hinweis · VOB/A, VOB/B, VOB/C",
+      "vobNoticeBody": "Die VOB ist eine DIN-Normenreihe und urheberrechtlich geschützt (DIN Media). Die hier hinterlegten Texte sind paraphrasierte Zusammenfassungen für Referenzzwecke (Fair Use). Volltexte werden via DIN-Media-Lizenz (Pro-Tier) integriert.",
+      "countParagraphs": "Paragraphen",
+      "countAtv": "ATVs / Normen",
+      "search": "Paragraph oder Stichwort suchen …",
+      "license": {
+        "free": "Frei",
+        "licensed": "Lizenziert"
+      },
+      "vobNotice": "VOB-Inhalte als Zitat (§ 51 UrhG); Volltext über DIN-Media-Lizenz."
+    },
+    "urteile": {
+      "title": "Urteilsdatenbank",
+      "subtitle": "BGH-Rechtsprechung VII. ZR + V. ZR",
+      "kicker": "Referenz · BGH",
+      "intro": "{total} BGH-Entscheidungen aus baurelevanten Senaten · live indiziert aus dem ECLI-Verzeichnis der BMJ.",
+      "lastUpdate": " Letzter Stand: ",
+      "stats": {
+        "total": "Entscheidungen gesamt",
+        "viiZr": "VII. Zivilsenat",
+        "viiZrCaption": "Werkvertrag · Bauvertrag",
+        "vZr": "V. Zivilsenat",
+        "vZrCaption": "Sachenrecht · Grundstücke"
+      },
+      "filterMatches": "{count} Treffer mit aktuellem Filter",
+      "noMatches": "Keine Treffer",
+      "noMatchesAdjust": "Filter anpassen oder zurücksetzen.",
+      "noMatchesFill": "Datenbank ist leer. Mit \"npm run db:fetch-cases\" befüllen.",
+      "senateDistribution": "Verteilung nach Senat",
+      "sourceKicker": "Quelle",
+      "sourceBody": "Die Datenbasis stammt aus dem offiziellen ECLI-Index des Bundesministeriums der Justiz (rechtsprechung-im-internet.de). Aktualisierung mit ",
+      "sourceBody2": ". Der Volltext einer Entscheidung wird beim Anklicken auf der Quell-URL aufgerufen.",
+      "rdgFooter": "Information, keine Rechtsberatung i.S.d. RDG. Die Wiedergabe von Leitsätzen und Tenor folgt § 5 UrhG (amtliches Werk).",
+      "search": "Az., Titel oder Stichwort suchen …",
+      "filter": {
+        "court": "Gericht",
+        "year": "Jahr",
+        "senate": "Senat"
+      },
+      "stats": {
+        "total": "Insgesamt",
+        "viiZr": "VII. ZR (Werkvertrag)",
+        "vZr": "V. ZR (Sachenrecht)"
+      },
+      "fulltextHint": "Volltext beim BMJ einsehbar."
+    },
+    "vorlagen": {
+      "title": "Vorlagen",
+      "subtitle": "Wiederkehrende Schriftstücke",
+      "empty": "Noch keine Vorlagen."
+    },
+    "beweis": {
+      "title": "Beweissicherung",
+      "subtitle": "Foto-/Video-Dokumentation bei kritischen Ereignissen",
+      "newEvidence": "Neue Beweissicherung",
+      "empty": "Noch keine Beweissicherungen."
+    },
+    "workspace": {
+      "title": "Workspace",
+      "subtitle": "Konfiguration und Nutzerverwaltung",
+      "tabs": {
+        "general": "Allgemein",
+        "users": "Nutzer",
+        "vob": "VOB",
+        "hinschg": "HinSchG",
+        "business": "Geschäftsdaten"
+      },
+      "general": {
+        "name": "Workspace-Name",
+        "role": "Rolle",
+        "roleOptions": {
+          "bauunternehmer": "Bauunternehmer",
+          "bauherr": "Bauherr",
+          "ingenieurbuero": "Ingenieurbüro"
+        }
+      },
+      "users": {
+        "invite": "Nutzer einladen",
+        "table": {
+          "name": "Name",
+          "email": "E-Mail",
+          "role": "Rolle",
+          "status": "Status",
+          "lastLogin": "Letzter Login"
+        }
+      },
+      "vob": {
+        "providerLabel": "Bevorzugter externer Provider",
+        "providers": {
+          "juris": "juris",
+          "din": "DIN Media",
+          "beck": "beck-online",
+          "all": "Alle"
+        }
+      },
+      "hinschg": {
+        "enabled": "Hinweisgebersystem aktiv",
+        "officeEmail": "E-Mail der Hinweisgeberstelle"
+      },
+      "business": {
+        "iban": "IBAN",
+        "bic": "BIC",
+        "bankName": "Bank",
+        "taxId": "Steuer-Nr.",
+        "vatId": "USt-IdNr.",
+        "address": "Anschrift",
+        "email": "E-Mail",
+        "phone": "Telefon"
+      }
+    },
+    "hinschg": {
+      "title": "Hinweisgeberstelle",
+      "subtitle": "Meldungen nach §§ 12 ff. HinSchG",
+      "kicker": "Verwaltung · § 12 ff. HinSchG",
+      "intro": "Interne Meldestelle nach Hinweisgeberschutzgesetz. Pflicht ab 50 Beschäftigten. Eingangsbestätigung 7 Tage, Rückmeldung 3 Monate (§ 17 HinSchG).",
+      "notEnabled": "Die Meldestelle ist für diesen Workspace nicht aktiviert.",
+      "notEnabledHint": "Aktivierung in den Workspace-Einstellungen — danach steht die öffentliche Meldungs-URL zur Verfügung.",
+      "goToSettings": "→ Zu den Workspace-Einstellungen",
+      "publicUrlHint": "Diese URL kann öffentlich verlinkt oder per E-Mail/Aushang bekanntgemacht werden — kein Login erforderlich.",
+      "openUrl": "URL öffnen ↗",
+      "anonymousLabel": "anonym",
+      "submittedAgo": "eingegangen {ago}",
+      "responseDeadlineLabel": "Frist bis {date}",
+      "statsLabels": {
+        "total": "Meldungen gesamt",
+        "newWaiting": "Neu (warten auf Ack)",
+        "inReview": "In Prüfung",
+        "deadlineMissed": "Frist überschritten"
+      },
+      "emptyReceived": "Noch keine Meldungen eingegangen.",
+      "publicUrl": "Öffentliche Meldungs-URL",
+      "stats": {
+        "new": "Neu",
+        "inReview": "In Prüfung",
+        "completed": "Abgeschlossen",
+        "overdue": "Überfällig"
+      },
+      "deadlines": {
+        "ack": "Eingangsbestätigung: 7 Tage",
+        "feedback": "Rückmeldung: 3 Monate"
+      },
+      "empty": "Keine Meldungen."
+    },
+    "lizenz": {
+      "title": "Lizenz-Center",
+      "subtitle": "Workspace-Tier, Nutzer- und Plattform-Lizenzen",
+      "kicker": "Workspace · {name}",
+      "intro": "Übersicht über Workspace-Tier, aktive Plattform-Lizenzen, Nutzer-Lizenzen und Compliance-Status. Verwaltet werden Plattform-Lizenzen vom Anbieter (DIN Media / juris / Beck) — Endnutzer-Abos bleiben extern.",
+      "stats": {
+        "activeTier": "Aktiver Tier",
+        "usersActive": "Nutzer aktiv",
+        "platformLicenses": "Plattform-Lizenzen"
+      },
+      "sections": {
+        "workspaceTier": "Workspace-Tier",
+        "platformLicensesCount": "Plattform-Lizenzen ({count})",
+        "external": "Externe Konten (Bring-your-own-Subscription)",
+        "users": "Nutzer im Workspace",
+        "compliance": "Compliance"
+      },
+      "facts": {
+        "workspaceId": "Workspace-ID",
+        "createdAt": "Angelegt",
+        "usedLicenses": "Genutzte Lizenzen",
+        "vobLicense": "VOB-Lizenz-Status",
+        "usedLicensesValue": "{used}/{total} Nutzer"
+      },
+      "tierFallback": "Eigener Tier-Vertrag.",
+      "noPlatformLicense": "Noch keine Plattform-Lizenz hinterlegt. Die App läuft im Tier-0-Modus (Paraphrase + Deep-Link auf externe Anbieter).",
+      "noPlatformLicenseHint": "Bei abgeschlossenem Vertrag (z. B. DIN Media VOB-Volltext) Eintrag in {code} anlegen — danach schaltet die UI automatisch auf Volltext-Anzeige.",
+      "validFrom": "gültig ab {date}",
+      "validUntil": " bis {date}",
+      "external_": {
+        "vobTitle": "VOB-Volltext-Anbieter",
+        "vobAll": "Alle Anbieter werden angeboten",
+        "vobPreferred": "Bevorzugt: {provider}",
+        "vobAction": "In Workspace ändern",
+        "anthropicTitle": "Anthropic-AVV (Claude-API)",
+        "anthropicValue": "Vor Aktivierung der KI-Antworten Vertrag mit Anthropic abschließen.",
+        "anthropicAction": "DPA ansehen",
+        "hostingTitle": "Hosting · Hetzner Frankfurt",
+        "hostingValue": "DSGVO-konform · AVV bereits Teil der Hetzner-AGB.",
+        "hostingAction": "AVV prüfen"
+      },
+      "users_": {
+        "lastLogin": "zuletzt {ago}",
+        "withLicense": "Lizenz",
+        "noLicense": "ohne Lizenz",
+        "manageLink": "Workspace verwalten →"
+      },
+      "compliance_": {
+        "auditEntries": "Audit-Log-Einträge",
+        "auditNote": "Volltext-Aufrufe lizenzpflichtiger Inhalte werden für DIN-Media-Audits geloggt — sobald Lizenz aktiv."
+      },
+      "tier": {
+        "label": "Workspace-Tier",
+        "solo": "Solo / Free",
+        "team": "Team",
+        "business": "Business",
+        "enterprise": "Enterprise"
+      },
+      "users": {
+        "label": "Nutzer-Lizenzen",
+        "available": "{n} verfügbar",
+        "used": "{n} vergeben"
+      },
+      "platform": {
+        "label": "Plattform-Lizenzen",
+        "validUntil": "Gültig bis",
+        "auditCount": "Audit-Zugriffe"
+      },
+      "external": {
+        "label": "Externe Konten",
+        "vobProvider": "VOB-Provider",
+        "anthropic": "Anthropic-AVV",
+        "hetzner": "Hetzner-AVV"
+      }
+    },
+    "login": {
+      "metaTitle": "Anmelden",
+      "metaDescription": "Anmeldung bei LexBau.",
+      "kicker": "Anmeldung",
+      "welcome": "Willkommen zurück",
+      "emailIntro": "Gib die E-Mail-Adresse ein, mit der du in deinem Workspace hinterlegt bist.",
+      "emailLabel": "E-Mail",
+      "submit": "Anmelden",
+      "submitting": "Wird geprüft …",
+      "helpText": "Aktuell: Login per E-Mail-Lookup gegen den Workspace. In Produktion durch Magic-Link (Resend) oder SSO ersetzbar — nur die Provider-Konfiguration in {filePath} ändern.",
+      "errors": {
+        "emptyEmail": "Bitte E-Mail-Adresse eingeben.",
+        "notFound": "Diese E-Mail ist im aktiven Workspace nicht hinterlegt. Bitte beim Workspace-Admin anfragen.",
+        "generic": "Anmeldung fehlgeschlagen. Bitte erneut versuchen."
+      }
+    }
+  },
+  "legal": {
+    "impressum": {
+      "title": "Impressum",
+      "description": "Anbieterkennzeichnung gemäß § 5 DDG (vormals TMG) und § 18 MStV."
+    },
+    "datenschutz": {
+      "title": "Datenschutzerklärung",
+      "description": "Information über die Verarbeitung personenbezogener Daten gemäß Art. 13 DSGVO."
+    },
+    "agb": {
+      "title": "Allgemeine Geschäftsbedingungen",
+      "description": "Vertragsbedingungen für die Nutzung von LexBau."
+    },
+    "rdg": {
+      "title": "RDG-Hinweis",
+      "description": "Hinweise zum Rechtsdienstleistungsgesetz."
+    }
+  },
+  "errors": {
+    "kicker": "Fehler",
+    "title": "Etwas ist schiefgelaufen.",
+    "description": "Wir konnten die Seite nicht anzeigen. Versuche es bitte erneut. Wenn der Fehler bleibt, hilft oft ein Wechsel zur Startseite.",
+    "errorIdLabel": "Fehler-ID:",
+    "retry": "Erneut versuchen",
+    "backHome": "Zur Startseite",
+    "notFound": {
+      "kicker": "404",
+      "title": "Seite nicht gefunden.",
+      "description": "Die aufgerufene Adresse existiert nicht oder wurde verschoben.",
+      "backHome": "Zur Startseite",
+      "viewProjects": "Projekte ansehen"
+    }
+  }
+}
