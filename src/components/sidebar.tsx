@@ -82,15 +82,54 @@ export function Sidebar({
   // Public-Aufmaß-Prüfer-Routen ebenso (externe Prüfer ohne Account).
   if (pathname.startsWith("/aufmass-pruefen")) return null;
 
-  function isItemActive(item: NavSection["items"][number]): boolean {
+  // Längster Treffer-Score pro Item — verhindert, dass z. B. /vergabe (Analyse)
+  // bei Aufruf von /vergabe/radar mit-leuchtet. Wir berechnen pro Item den
+  // längsten Präfix, der auf den Pfad passt (0 = kein Treffer), und markieren
+  // anschließend nur das Item mit dem höchsten Score je gerendertem Set aktiv.
+  function itemMatchScore(item: NavSection["items"][number]): number {
     if (item.id === "dashboard") {
-      return pathname === "/" || pathname.startsWith("/dashboard");
+      if (pathname === "/" || pathname.startsWith("/dashboard")) {
+        return Math.max(1, "/dashboard".length);
+      }
+      return 0;
     }
-    if (item.href === "/") return pathname === "/";
-    if (item.activePathPrefixes && item.activePathPrefixes.length > 0) {
-      return item.activePathPrefixes.some((p) => pathname.startsWith(p));
+    if (item.href === "/") return pathname === "/" ? 1 : 0;
+    const prefixes =
+      item.activePathPrefixes && item.activePathPrefixes.length > 0
+        ? item.activePathPrefixes
+        : [item.href];
+    let best = 0;
+    for (const p of prefixes) {
+      if (pathname === p || pathname.startsWith(p + "/") || pathname.startsWith(p + "?")) {
+        if (p.length > best) best = p.length;
+      } else if (pathname.startsWith(p) && p === item.href) {
+        // Backwards-Kompat für href-Matches ohne expliziten Trenn-Slash —
+        // verhindert nicht, dass längere Prefixes anderer Items gewinnen.
+        if (p.length > best) best = p.length;
+      }
     }
-    return pathname.startsWith(item.href);
+    return best;
+  }
+
+  // Pro Sektion das Item mit dem höchsten Score (>0) als aktiv markieren.
+  // Über Sektionen hinweg darf mehr als ein Item aktiv sein, falls Routen
+  // sich überschneiden — innerhalb einer Sektion gewinnt der längste Match.
+  const activeItemIds = new Set<string>();
+  for (const section of nav) {
+    let bestId: string | null = null;
+    let bestScore = 0;
+    for (const it of section.items) {
+      const s = itemMatchScore(it);
+      if (s > bestScore) {
+        bestScore = s;
+        bestId = it.id;
+      }
+    }
+    if (bestId) activeItemIds.add(bestId);
+  }
+
+  function isItemActive(item: NavSection["items"][number]): boolean {
+    return activeItemIds.has(item.id);
   }
 
   return (

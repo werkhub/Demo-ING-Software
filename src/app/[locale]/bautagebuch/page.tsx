@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/container";
 import { getBautagebuchEntries, getBautagebuchStats, getProjects } from "@/db/queries";
 import { StatCard, StatGrid } from "@/components/stat-card";
@@ -21,9 +22,20 @@ export default async function Bautagebuch() {
         <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--color-fg-muted)]">
           {t("kicker")}
         </p>
-        <h1 className="mt-4 text-4xl md:text-5xl font-semibold tracking-tighter">
-          {t("title")}
-        </h1>
+        <div className="mt-4 flex items-baseline justify-between gap-3 flex-wrap">
+          <h1 className="text-4xl md:text-5xl font-semibold tracking-tighter">
+            {t("title")}
+          </h1>
+          <Link
+            href="/bautagebuch/sprach-eintrag"
+            className="inline-flex items-center gap-2 rounded-full bg-[color:var(--color-accent)] text-white px-5 py-2 text-sm hover:bg-[color:var(--color-fg)] transition-colors"
+          >
+            🎤 Sprach-Eintrag
+            <span className="font-mono text-[9px] uppercase tracking-[0.18em] bg-white/20 rounded-sm px-1.5 py-0.5">
+              Demo
+            </span>
+          </Link>
+        </div>
         <p className="mt-4 max-w-2xl text-base text-[color:var(--color-fg-muted)]">
           {t("intro")}
         </p>

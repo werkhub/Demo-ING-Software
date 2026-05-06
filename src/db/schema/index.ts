@@ -51,5 +51,6 @@ export * from "./permissions";
 export * from "./cron";
 export * from "./audit";
 export * from "./vergabe-radar";
+export * from "./abschlagspruefung";
 export * from "./relations";
 export * from "./types";

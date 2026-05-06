@@ -61,6 +61,7 @@ export type VorgangTriggerSource =
   | "bautagebuch"
   | "ruege_analyse"
   | "vergabe_analyse"
+  | "abschlagspruefung"
   | "vertrags_scan"
   | "nu_pass_through"
   | "nu_compliance"

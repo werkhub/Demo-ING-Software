@@ -141,6 +141,14 @@ export const MODULES = [
     section: "finanzen",
   },
   {
+    id: "abschlagspruefung",
+    href: "/abschlagspruefung",
+    label: "Abschlagsprüfung",
+    icon: "shield",
+    section: "finanzen",
+    badge: { text: "Demo", color: "violet" },
+  },
+  {
     id: "ausgangsrechnungen",
     href: "/ausgangsrechnungen",
     label: "Ausgangsrechnungen",
@@ -244,6 +252,14 @@ export const MODULES = [
     label: "Anordnungs-Check",
     icon: "mail",
     section: "werkzeuge",
+  },
+  {
+    id: "rgb-wissen",
+    href: "/rgb-wissen",
+    label: "RGB-Wissensdatenbank",
+    icon: "book-open",
+    section: "werkzeuge",
+    badge: { text: "Demo", color: "violet" },
   },
   {
     id: "hoai-rechner",

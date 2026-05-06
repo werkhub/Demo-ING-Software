@@ -159,6 +159,18 @@ const QUICK_ACCESS_ALL: Record<QuickActionId, QuickTile> = {
     desc: "Treffer aus Vergabe-Plattformen",
     href: "/vergabe/radar",
   },
+  abschlagspruefung: {
+    id: "abschlagspruefung",
+    title: "Abschlag prüfen",
+    desc: "LV/Aufmaß/§ 16 VOB/B",
+    href: "/abschlagspruefung",
+  },
+  "rgb-wissen": {
+    id: "rgb-wissen",
+    title: "RGB-Wissen",
+    desc: "Wissensdatenbank",
+    href: "/rgb-wissen",
+  },
 };
 
 const QUICK_ACCESS_ORDER: Record<WorkspaceRole, QuickActionId[]> = {

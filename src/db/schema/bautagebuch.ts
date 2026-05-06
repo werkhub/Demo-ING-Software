@@ -64,6 +64,41 @@ export const bautagebuchEntries = pgTable(
       .notNull()
       .default("info"),
     suggestion: text("suggestion"),
+    /* ---- Strukturierte Doku-Felder (befüllt vom Sprach-Eintrag) ---- */
+    /** JSON: [{name, funktion, firma, von?, bis?}] — Anwesende Personen. */
+    anwesendeJson: text("anwesende_json"),
+    /** JSON: [{gewerk, bauteil, beschreibung}] — geleistete Arbeiten. */
+    arbeitenJson: text("arbeiten_json"),
+    /** JSON: [{lieferant, material, menge, einheit, lieferscheinNr}]. */
+    lieferungenJson: text("lieferungen_json"),
+    /**
+     * JSON: [{erteilerName, beschreibung, mehrkostenVorbehaltErforderlich,
+     *         mehrkostenVorbehaltGesetzt}] — AG-/Bauleitung-Anordnungen vor Ort.
+     */
+    anordnungenJson: text("anordnungen_json"),
+    /**
+     * JSON: [{art ("unfall"|"beinahe"|"gefahr"), beschreibung,
+     *         personenschaden, dguvMeldepflichtig}] — Sicherheitsvorfälle.
+     */
+    vorfaelleJson: text("vorfaelle_json"),
+    /* ---- Beweissicherung ---- */
+    /** SHA-256 Hash der signierten Eintrags-Snapshot — Manipulations-Detektion. */
+    signatureHash: text("signature_hash"),
+    /** Zeitpunkt der digitalen Signatur. Vor Signatur null. */
+    signedAt: timestamp("signed_at"),
+    /** Anzeigename des Signierenden (oft = authorName). */
+    signedBy: text("signed_by"),
+    /** Nach Signatur true — UI verhindert Edit (rechtliche Beweis-Stabilität). */
+    locked: boolean("locked").notNull().default(false),
+    /** Optional: GPS-Position bei Eintragserstellung (Vor-Ort-Nachweis). */
+    gpsLat: real("gps_lat"),
+    gpsLon: real("gps_lon"),
+    /** Anzahl angehängter Fotos (Platzhalter — Foto-Persistenz folgt). */
+    photoCount: integer("photo_count").notNull().default(0),
+    /** Quelle des Eintrags — manuell oder via Sprach-Aufnahme. */
+    source: text("source", { enum: ["manual", "voice"] })
+      .notNull()
+      .default("manual"),
     createdAt: timestamp("created_at")
       .notNull()
       .$defaultFn(() => new Date()),
