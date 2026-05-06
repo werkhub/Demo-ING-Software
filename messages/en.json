@@ -80,6 +80,7 @@
       "uebersicht": "Overview",
       "tagesgeschaeft": "Daily Work",
       "projekte": "Projects",
+      "vergabe": "Tendering",
       "finanzen": "Finance",
       "personal": "Personnel",
       "dokumentation": "Documentation",
@@ -103,6 +104,8 @@
       "erechnung-import": "E-Invoice Import",
       "personal": "Personnel",
       "personal-zuordnung": "Project Assignment",
+      "ausschreibungs-radar": "Tender Radar",
+      "ausschreibungs-analyse": "Tender Analysis",
       "hoai-rechner": "HOAI Calculator",
       "vertrag": "Contract Scan",
       "ruege-analyse": "Defect Notice Analysis",
@@ -904,6 +907,14 @@
         "delete": "Delete contract"
       },
       "empty": "No contracts yet."
+    },
+    "ausschreibungsAnalyse": {
+      "title": "Tender Analysis",
+      "subtitle": "Scan, classify and route public tender documents",
+      "kicker": "AI tool · Tendering · Demo",
+      "intro": "Paste a tender platform URL, paste BVB/contract text, or upload documents. The tool extracts key facts, eligibility and award criteria, risk clauses and deadlines — and returns a bid/no-bid recommendation with reasoning.",
+      "statusKicker": "Status",
+      "statusBody": "Heuristic analysis with platform detection (DTVP, eVergabe, TED, Subreport, Bavaria, NRW) and clause scan. Full-text extraction from PDF/GAEB and Claude-API deep analysis are coming in Phase 1."
     },
     "ruegeAnalyse": {
       "title": "Defect Notice Analysis",

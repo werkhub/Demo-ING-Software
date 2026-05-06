@@ -342,7 +342,7 @@ function UebersichtTab({
                 <CitationBadge
                   key={c.id}
                   kind={c.sourceKind}
-                  ref={c.sourceRef}
+                  cite={c.sourceRef}
                   snippet={c.sourceText}
                 />
               ))}

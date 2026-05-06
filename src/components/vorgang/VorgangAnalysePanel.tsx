@@ -80,7 +80,7 @@ export function VorgangAnalysePanel({
                   <CitationBadge
                     key={`${c.kind}_${c.ref}_${i}`}
                     kind={c.kind}
-                    ref={c.ref}
+                    cite={c.ref}
                     snippet={c.snippet}
                   />
                 ))}

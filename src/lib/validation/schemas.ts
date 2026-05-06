@@ -1915,6 +1915,32 @@ export const ruegeTriggerSchema = z.object({
   recipientEmail: optionalEmail,
 });
 
+export const vergabeTriggerSchema = z.object({
+  /** Plattform-URL ist optional — Analyse kann auch nur aus Text laufen. */
+  url: z
+    .union([z.string().trim().url("Ungültige URL."), z.literal("")])
+    .optional()
+    .transform((v) => (v && v !== "" ? v : null)),
+  /** Aufforderungs-/BVB-/ZVB-Auszug. Mindestens eines von text|url muss befüllt sein. */
+  text: z
+    .string()
+    .trim()
+    .max(100_000, "Text zu lang (max. 100.000 Zeichen).")
+    .optional()
+    .transform((v) => (v && v.length > 0 ? v : null)),
+  /** Datei-Liste als JSON-String aus dem Client (Name + Größe — kein Upload in dieser Phase). */
+  filesJson: z
+    .string()
+    .trim()
+    .max(20_000)
+    .optional()
+    .transform((v) => (v && v.length > 0 ? v : null)),
+  projectId: optionalProjectId,
+}).refine((d) => d.url || (d.text && d.text.length >= 50), {
+  message: "Bitte URL oder mindestens 50 Zeichen Text einfügen.",
+  path: ["text"],
+});
+
 export const abnahmeMangelSchema = z.object({
   projectId: z.string().trim().min(1, "Projekt-ID fehlt.").max(200),
   description: z

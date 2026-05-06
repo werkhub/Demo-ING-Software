@@ -80,6 +80,7 @@
       "uebersicht": "Übersicht",
       "tagesgeschaeft": "Tagesgeschäft",
       "projekte": "Projekte",
+      "vergabe": "Vergabe",
       "finanzen": "Finanzen",
       "personal": "Personal",
       "dokumentation": "Dokumentation",
@@ -103,6 +104,8 @@
       "erechnung-import": "E-Rechnung-Import",
       "personal": "Personal",
       "personal-zuordnung": "Projekt-Zuordnung",
+      "ausschreibungs-radar": "Ausschreibungs-Radar",
+      "ausschreibungs-analyse": "Ausschreibungs-Analyse",
       "hoai-rechner": "HOAI-Rechner",
       "vertrag": "Vertrags-Scan",
       "ruege-analyse": "Rüge-Analyse",
@@ -904,6 +907,14 @@
         "delete": "Vertrag löschen"
       },
       "empty": "Noch keine Verträge erfasst."
+    },
+    "ausschreibungsAnalyse": {
+      "title": "Ausschreibungs-Analyse",
+      "subtitle": "Vergabeunterlagen scannen, einordnen, in Vorgang überführen",
+      "kicker": "KI-Werkzeug · Vergabe · Demo",
+      "intro": "URL einer Ausschreibungs-Plattform einfügen, Aufforderungs-/BVB-Text einfügen oder Unterlagen hochladen. Tool extrahiert Eckdaten, Eignungs- und Zuschlagskriterien, Risiko-Klauseln und Fristen — und liefert eine Bid/No-Bid-Empfehlung mit Begründung.",
+      "statusKicker": "Status",
+      "statusBody": "Heuristik-Analyse mit Plattform-Erkennung (DTVP, eVergabe, TED, Subreport, Bayern, NRW) und Klausel-Scan. Volltext-Extraktion aus PDF/GAEB sowie Claude-API-gestützte Tiefen-Analyse folgen in Phase 1."
     },
     "ruegeAnalyse": {
       "title": "Rüge-Analyse",

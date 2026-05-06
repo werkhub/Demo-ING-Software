@@ -147,6 +147,18 @@ const QUICK_ACCESS_ALL: Record<QuickActionId, QuickTile> = {
     desc: "Mitarbeiter den Projekten zuordnen",
     href: "/personal/zuordnung",
   },
+  "ausschreibungs-analyse": {
+    id: "ausschreibungs-analyse",
+    title: "Ausschreibung scannen",
+    desc: "Vergabeunterlagen einordnen",
+    href: "/vergabe",
+  },
+  "ausschreibungs-radar": {
+    id: "ausschreibungs-radar",
+    title: "Ausschreibungs-Radar",
+    desc: "Treffer aus Vergabe-Plattformen",
+    href: "/vergabe/radar",
+  },
 };
 
 const QUICK_ACCESS_ORDER: Record<WorkspaceRole, QuickActionId[]> = {

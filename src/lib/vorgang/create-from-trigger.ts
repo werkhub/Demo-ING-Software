@@ -60,6 +60,7 @@ export async function findOpenVorgangByLink(opts: {
 export type VorgangTriggerSource =
   | "bautagebuch"
   | "ruege_analyse"
+  | "vergabe_analyse"
   | "vertrags_scan"
   | "nu_pass_through"
   | "nu_compliance"

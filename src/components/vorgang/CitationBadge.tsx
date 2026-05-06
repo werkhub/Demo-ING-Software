@@ -33,21 +33,21 @@ function hrefFor(kind: VorgangCitationKind, ref: string): string {
 
 export function CitationBadge({
   kind,
-  ref,
+  cite,
   snippet,
 }: {
   kind: VorgangCitationKind;
-  ref: string;
+  cite: string;
   snippet?: string | null;
 }) {
   return (
     <Link
-      href={hrefFor(kind, ref)}
+      href={hrefFor(kind, cite)}
       title={snippet ?? undefined}
       className={`inline-flex items-center gap-1 font-mono text-[10px] uppercase tracking-[0.12em] border rounded-sm px-1.5 py-0.5 hover:underline ${KIND_TONE[kind]}`}
     >
       <span aria-hidden>{KIND_PREFIX[kind]}</span>
-      <span>{ref}</span>
+      <span>{cite}</span>
     </Link>
   );
 }

@@ -18,6 +18,7 @@ export type ModuleSection =
   | "uebersicht"
   | "tagesgeschaeft"
   | "projekte"
+  | "vergabe"
   | "finanzen"
   | "personal"
   | "dokumentation"
@@ -108,6 +109,27 @@ export const MODULES = [
 
   // ===== Projekte (Sprungbrett) =====
   { id: "projekte", href: "/projekte", label: "Projekte", icon: "building", section: "projekte" },
+
+  // ===== Vergabe (Pre-Sales: Ausschreibungen scannen, einordnen, in Vorgang
+  // überführen). Sichtbar für alle Workspace-Typen — BU/IB nutzen es zur
+  // Bid-Vorbereitung; Bauherrn können eigene Ausschreibungen gegenchecken.
+  // Reihenfolge: Radar zuerst (Eingang neuer Treffer), dann Analyse. =====
+  {
+    id: "ausschreibungs-radar",
+    href: "/vergabe/radar",
+    label: "Ausschreibungs-Radar",
+    icon: "search",
+    section: "vergabe",
+    badge: { text: "Demo", color: "violet" },
+  },
+  {
+    id: "ausschreibungs-analyse",
+    href: "/vergabe",
+    label: "Ausschreibungs-Analyse",
+    icon: "search",
+    section: "vergabe",
+    badge: { text: "Demo", color: "violet" },
+  },
 
   // ===== Finanzen (Demo-Slim: Detail-Module verschwinden aus der Sidebar,
   // bleiben über Hub + Direkt-URL erreichbar) =====
@@ -310,6 +332,7 @@ export const SECTION_LABEL: Record<ModuleSection, string> = {
   uebersicht: "Übersicht",
   tagesgeschaeft: "Tagesgeschäft",
   projekte: "Projekte",
+  vergabe: "Vergabe",
   finanzen: "Finanzen",
   personal: "Personal",
   dokumentation: "Dokumentation",
@@ -322,6 +345,7 @@ export const SECTION_ORDER: ModuleSection[] = [
   "uebersicht",
   "tagesgeschaeft",
   "projekte",
+  "vergabe",
   "finanzen",
   "personal",
   "dokumentation",

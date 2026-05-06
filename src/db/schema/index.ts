@@ -50,5 +50,6 @@ export * from "./meilensteine";
 export * from "./permissions";
 export * from "./cron";
 export * from "./audit";
+export * from "./vergabe-radar";
 export * from "./relations";
 export * from "./types";
